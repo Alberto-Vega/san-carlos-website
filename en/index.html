@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Carlos Sonora - A Paradise to Discover in the Sea of Cortez</title>
+    
+    <!-- Add hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+    
     <style>
         * {
             margin: 0;
@@ -174,6 +180,35 @@
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-switcher:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .language-switcher .flag {
+            font-size: 1.2rem;
+        }
+
+        .language-switcher .lang-text {
+            font-weight: 500;
         }
 
         /* Hero Slider */
@@ -614,6 +649,10 @@
                 <span>SAN CARLOS</span>
             </div>
             <div class="nav-right">
+                <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es'); window.location.href='/es/'">
+                    <span class="flag">🇲🇽</span>
+                    <span class="lang-text">ES</span>
+                </a>
                 <div class="weather-widget">
                     <span class="weather-icon">☀️</span>
                     <span id="temperature">75°F</span>
@@ -842,6 +881,13 @@
                 }
             });
         });
+
+        // Add language preference function
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
     </script>
 </body>
 </html>
