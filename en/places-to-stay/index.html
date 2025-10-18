@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Hotels & Vacation Rentals in San Carlos Sonora</title>
+    <meta name="description" content="Discover the best places to stay in San Carlos Sonora. Compare hotels, vacation rentals, and beachfront properties with ocean views and easy beach access.">
+    
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/places-to-stay/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/donde-hospedarse/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+    
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristDestination",
+      "name": "San Carlos Sonora",
+      "description": "Beautiful beach destination on the Sea of Cortez with vacation rentals, hotels, and beachfront properties",
+      "url": "https://sancarlos-sonora.com/en/places-to-stay/",
+      "touristType": ["Beach Lovers", "Families", "Couples", "Adventure Seekers"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Carlos",
+        "addressRegion": "Sonora",
+        "addressCountry": "MX"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-switcher:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .language-switcher .flag {
+            font-size: 1.2rem;
+        }
+
+        .language-switcher .lang-text {
+            font-weight: 500;
+        }
+
+        .weather-widget {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .weather-icon {
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #d97706;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .logo span {
+            white-space: nowrap;
+        }
+
+        .sun-icon {
+            width: 110px;
+            height: 55px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .sun-circle {
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: sunGlow 3s ease-in-out infinite;
+        }
+
+        .sun-ray {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 12px;
+            background: linear-gradient(to bottom, #fbbf24, transparent);
+            transform-origin: top center;
+        }
+
+        .sun-ray:nth-child(2) { transform: translateX(-50%) rotate(-50deg); }
+        .sun-ray:nth-child(3) { transform: translateX(-50%) rotate(-35deg); }
+        .sun-ray:nth-child(4) { transform: translateX(-50%) rotate(-20deg); }
+        .sun-ray:nth-child(5) { transform: translateX(-50%) rotate(-10deg); }
+        .sun-ray:nth-child(6) { transform: translateX(-50%); }
+        .sun-ray:nth-child(7) { transform: translateX(-50%) rotate(10deg); }
+        .sun-ray:nth-child(8) { transform: translateX(-50%) rotate(20deg); }
+        .sun-ray:nth-child(9) { transform: translateX(-50%) rotate(35deg); }
+        .sun-ray:nth-child(10) { transform: translateX(-50%) rotate(50deg); }
+
+        @keyframes sunGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.8); }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            background: white;
+            padding: 0.6rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #d97706;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('../../casa_allea.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 5rem 5%;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .comparison-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .comparison-content h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-card .icon {
+            font-size: 2rem;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .comparison-card li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-card li:before {
+            content: "✓";
+            color: #d97706;
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .categories-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .categories-content h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            height: 400px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+        }
+
+        .category-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Neighborhoods Section */
+        .neighborhoods-section {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .neighborhoods-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .neighborhoods-content h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .neighborhood-item {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .neighborhood-item h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .neighborhood-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #d97706;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .comparison-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            .intro-section h2,
+            .comparison-content h2,
+            .categories-content h2,
+            .neighborhoods-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/en/" class="logo">
+                <div class="sun-icon">
+                    <div class="sun-circle"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                    <div class="sun-ray"></div>
+                </div>
+                <span>SAN CARLOS</span>
+            </a>
+            <div class="nav-right">
+                <a href="/es/donde-hospedarse/" class="language-switcher">
+                    <span class="flag">🇲🇽</span>
+                    <span class="lang-text">ES</span>
+                </a>
+                <div class="weather-widget">
+                    <span class="weather-icon">☀️</span>
+                    <span id="temperature">75°F</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Where to Stay in San Carlos Sonora: Hotels, Vacation Rentals & More</h1>
+            <p>Discover the perfect beachfront accommodation for your Sea of Cortez getaway</p>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2>Finding Your Perfect Stay in San Carlos</h2>
+        <p>
+            Looking for hotels in San Carlos Sonora? While there are a few traditional hotels, many travelers prefer vacation rentals with stunning ocean views, private pools, and easy access to pristine beaches. Whether you're seeking a romantic getaway, family adventure, or budget-friendly option, San Carlos offers accommodations to suit every traveler's needs.
+        </p>
+        <p>
+            Located on Sonora's breathtaking coastline along the Sea of Cortez, San Carlos combines natural beauty with modern comfort. From beachfront villas to cozy condos near the marina, you'll find the perfect home base for exploring Jacques Cousteau's "Aquarium of the World."
+        </p>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-content">
+            <h2>Hotels vs. Vacation Rentals in San Carlos — Which is Right for You?</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3><span class="icon">🏨</span> Traditional Hotels</h3>
+                    <ul>
+                        <li>Daily housekeeping service</li>
+                        <li>On-site restaurants and bars</li>
+                        <li>24/7 front desk assistance</li>
+                        <li>Pool and common amenities</li>
+                        <li>Great for short stays</li>
+                        <li>Limited kitchen facilities</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3><span class="icon">🏡</span> Vacation Rentals</h3>
+                    <ul>
+                        <li>Full kitchen for home-cooked meals</li>
+                        <li>Private pools and outdoor spaces</li>
+                        <li>More space for families/groups</li>
+                        <li>Ocean views and beach access</li>
+                        <li>Better value for longer stays</li>
+                        <li>Local neighborhood experience</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 auto;">
+                <strong>Our Recommendation:</strong> Most visitors to San Carlos choose vacation rentals for the authentic coastal living experience, privacy, and incredible value — especially for stays of 3+ nights or groups of 4+ people.
+            </p>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="categories-content">
+            <h2>Top-Rated Stays by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="../../casa_allea.jpg" alt="Family Accommodations" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Family-Friendly</h3>
+                        <p>Spacious rentals with multiple bedrooms, shallow pools, and beach toys</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="../../casa-allea-unit-a-patio-1.jpg" alt="Romantic Getaways" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Romantic Couples</h3>
+                        <p>Intimate villas with sunset views, hot tubs, and private beach access</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="../../solimar-pool.jpeg" alt="Budget Options" class="category-image">
+                    <div class="category-overlay">
+                        <h3>Budget-Friendly</h3>
+                        <p>Cozy condos and apartments near town with all essentials included</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="neighborhoods-section">
+        <div class="neighborhoods-content">
+            <h2>Best Neighborhoods to Stay Near the Beach</h2>
+            
+            <div class="neighborhood-item">
+                <h3>🏖️ Playa Los Algodones</h3>
+                <p>
+                    Most hotels and vacation rentals near Playa Los Algodones offer incredible sunsets and quick access to waterfront restaurants. This is San Carlos' most popular beach area, perfect for swimming, kayaking, and watching dolphins play in the bay. Walking distance to shops, cafes, and the marina.
+                </p>
+            </div>
+
+            <div class="neighborhood-item">
+                <h3>⛵ Marina District</h3>
+                <p>
+                    Stay near the marina for easy access to fishing charters, diving excursions, and yacht tours. This area features modern condos with boat slips, waterfront dining, and stunning views of the Sea of Cortez. Ideal for water sports enthusiasts and fishing aficionados.
+                </p>
+            </div>
+
+            <div class="neighborhood-item">
+                <h3>🏔️ Cerro Tetakawi Area</h3>
+                <p>
+                    Properties near the iconic Tetakawi Peak offer dramatic desert-meets-ocean views and hiking trail access. These rentals provide a quieter, more secluded experience while still being just minutes from beaches and town. Perfect for nature lovers and photographers.
+                </p>
+            </div>
+
+            <div class="neighborhood-item">
+                <h3>🌊 Bahía Delfín</h3>
+                <p>
+                    Upscale vacation rentals and villas line this exclusive bay area, featuring private beaches, infinity pools, and luxury amenities. Known for calm waters perfect for paddleboarding and snorkeling. A premium choice for those seeking privacy and elegance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Find Your Perfect San Carlos Stay?</h2>
+        <p>Browse our curated selection of hotels, vacation rentals, and beachfront properties. From budget-friendly condos to luxury oceanfront villas, find the ideal accommodation for your Sea of Cortez adventure.</p>
+        <a href="/en/" class="cta-button">Explore Accommodations</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 San Carlos Sonora Tourism. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
+    </script>
+</body>
+</html>
