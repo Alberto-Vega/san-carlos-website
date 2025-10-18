@@ -418,6 +418,53 @@
             color: #555;
         }
 
+        /* Places to Stay Section */
+        .stay-section {
+            padding: 6rem 5%;
+            background: #f8f9fa;
+        }
+
+        .stay-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .stay-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
+        }
+
+        .stay-content:hover .stay-image {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .stay-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #d97706;
+        }
+
+        .stay-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .stay-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
         /* Worth Visiting Section */
         .worth-visiting {
             padding: 6rem 5%;
@@ -614,7 +661,8 @@
             }
 
             .hiking-content,
-            .cards-grid {
+            .cards-grid,
+            .stay-content {
                 grid-template-columns: 1fr;
             }
 
@@ -625,6 +673,23 @@
             .hero-text {
                 font-size: 1rem;
             }
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -726,6 +791,19 @@
                 <h3>Discover Desert & Coastal Trails</h3>
                 <p>Explore the hiking trails of San Carlos to uncover breathtaking views of the Sea of Cortez and surrounding Sonoran Desert. Trek through dramatic rock formations, discover hidden beaches, and witness stunning sunrises over Tetakawi Peak.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Places to Stay Section -->
+    <section class="stay-section">
+        <div class="stay-content">
+            <div class="stay-text slide-in-left">
+                <h2>Accommodations</h2>
+                <h3>Find Your Perfect Stay</h3>
+                <p>From luxury beachfront resorts to cozy vacation rentals, San Carlos offers a wide range of accommodations to suit every taste and budget. Wake up to stunning ocean views, enjoy world-class amenities, and experience the warmth of Sonoran hospitality.</p>
+                <a href="places-to-stay/" class="cta-button">Explore Places to Stay</a>
+            </div>
+            <img src="../loma-bella.jpg" alt="Luxury Accommodations in San Carlos" class="hiking-image slide-in-right">
         </div>
     </section>
 
