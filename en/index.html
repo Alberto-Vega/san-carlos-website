@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Carlos Sonora - A Paradise to Discover in the Sea of Cortez</title>
     
-    <!-- Add hreflang tags for SEO -->
+    <!-- Hreflang tags for SEO -->
     <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/" />
     <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/" />
     <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
@@ -30,7 +30,7 @@
             width: 100%;
             background: transparent;
             z-index: 1000;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -38,6 +38,13 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-top {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
         }
 
         .nav-content {
@@ -52,6 +59,33 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .language-switcher .flag {
+            font-size: 1.2rem;
+        }
+
+        .language-switcher .lang-text {
+            font-weight: 500;
         }
 
         .weather-widget {
@@ -132,21 +166,80 @@
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        nav.scrolled .nav-links a {
+            color: #333;
         }
 
         .nav-links a:hover {
             color: #d97706;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 0.8rem 1.2rem;
+            text-decoration: none;
+            display: block;
+            text-transform: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background: #f8f9fa;
+            color: #d97706;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .nav-widgets {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
         }
 
         /* Hamburger Menu */
@@ -180,35 +273,6 @@
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Language Switcher */
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .language-switcher:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
-        .language-switcher .flag {
-            font-size: 1.2rem;
-        }
-
-        .language-switcher .lang-text {
-            font-weight: 500;
         }
 
         /* Hero Slider */
@@ -418,53 +482,6 @@
             color: #555;
         }
 
-        /* Places to Stay Section */
-        .stay-section {
-            padding: 6rem 5%;
-            background: #f8f9fa;
-        }
-
-        .stay-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .stay-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
-        }
-
-        .stay-content:hover .stay-image {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-        }
-
-        .stay-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #d97706;
-        }
-
-        .stay-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .stay-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
         /* Worth Visiting Section */
         .worth-visiting {
             padding: 6rem 5%;
@@ -633,6 +650,10 @@
                 display: flex;
             }
 
+            .nav-top {
+                display: none;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 80px;
@@ -646,6 +667,24 @@
                 gap: 2rem;
                 transition: right 0.4s ease;
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                align-items: flex-start;
+            }
+
+            .nav-links a {
+                color: #333;
+            }
+
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+                background: #f8f9fa;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
             }
 
             .nav-links.active {
@@ -661,8 +700,7 @@
             }
 
             .hiking-content,
-            .cards-grid,
-            .stay-content {
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -674,28 +712,21 @@
                 font-size: 1rem;
             }
         }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: #d97706;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #b45309;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
+        <div class="nav-top">
+            <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es')">
+                <span class="flag">🇲🇽</span>
+                <span class="lang-text">ES</span>
+            </a>
+            <div class="weather-widget">
+                <span class="weather-icon">☀️</span>
+                <span id="temperature">75°F</span>
+            </div>
+        </div>
         <div class="nav-content">
             <div class="logo">
                 <div class="sun-icon">
@@ -709,32 +740,43 @@
                     <div class="sun-ray"></div>
                     <div class="sun-ray"></div>
                     <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
                 </div>
                 <span>SAN CARLOS</span>
             </div>
-            <div class="nav-right">
-                <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es'); window.location.href='/es/'">
-                    <span class="flag">🇲🇽</span>
-                    <span class="lang-text">ES</span>
-                </a>
-                <div class="weather-widget">
-                    <span class="weather-icon">☀️</span>
-                    <span id="temperature">75°F</span>
-                </div>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            
             <ul class="nav-links" id="navLinks">
-                <li><a href="https://google.com" onclick="closeMenu()">Discover</a></li>
-                <li><a href="https://google.com" onclick="closeMenu()">Beaches</a></li>
-                <li><a href="https://google.com" onclick="closeMenu()">Activities</a></li>
-                <li><a href="https://google.com" onclick="closeMenu()">Dining</a></li>
-                <li><a href="https://google.com" onclick="closeMenu()">Contact</a></li>
+                <li><a href="/en/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="return false;">
+                        Discover
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="closeMenu()">History</a>
+                        <a href="#" onclick="closeMenu()">Culture</a>
+                        <a href="#" onclick="closeMenu()">Events</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" onclick="return false;">
+                        Explore
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="closeMenu()">Beaches</a>
+                        <a href="#" onclick="closeMenu()">Activities</a>
+                        <a href="#" onclick="closeMenu()">Dining</a>
+                    </div>
+                </li>
+                <li><a href="/en/places-to-stay/">Places to Stay</a></li>
+                <li><a href="#" onclick="closeMenu()">Contact</a></li>
             </ul>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -791,19 +833,6 @@
                 <h3>Discover Desert & Coastal Trails</h3>
                 <p>Explore the hiking trails of San Carlos to uncover breathtaking views of the Sea of Cortez and surrounding Sonoran Desert. Trek through dramatic rock formations, discover hidden beaches, and witness stunning sunrises over Tetakawi Peak.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Places to Stay Section -->
-    <section class="stay-section">
-        <div class="stay-content">
-            <div class="stay-text slide-in-left">
-                <h2>Accommodations</h2>
-                <h3>Find Your Perfect Stay</h3>
-                <p>From luxury beachfront resorts to cozy vacation rentals, San Carlos offers a wide range of accommodations to suit every taste and budget. Wake up to stunning ocean views, enjoy world-class amenities, and experience the warmth of Sonoran hospitality.</p>
-                <a href="places-to-stay/" class="cta-button">Explore Places to Stay</a>
-            </div>
-            <img src="../loma-bella.jpg" alt="Luxury Accommodations in San Carlos" class="hiking-image slide-in-right">
         </div>
     </section>
 
@@ -887,6 +916,11 @@
             }
         });
 
+        // Save language preference
+        function saveLanguagePreference(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
         // Scroll to content function with smooth animation
         function scrollToContent() {
             const hikingSection = document.querySelector('.hiking-section');
@@ -929,6 +963,17 @@
             hamburger.classList.remove('active');
         }
 
+        // Mobile dropdown toggle
+        document.querySelectorAll('.dropdown > a').forEach(function(dropdownLink) {
+            dropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
         // Scroll animation observer
         const observerOptions = {
             threshold: 0.15,
@@ -959,13 +1004,6 @@
                 }
             });
         });
-
-        // Add language preference function
-        function saveLanguagePreference(lang) {
-            try {
-                localStorage.setItem('preferredLanguage', lang);
-            } catch(e) {}
-        }
     </script>
 </body>
 </html>
