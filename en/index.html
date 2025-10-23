@@ -9,6 +9,8 @@
     <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/" />
     <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/" />
     <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+        <!-- Link to navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
     
     <style>
         * {
@@ -21,258 +23,6 @@
             font-family: 'Georgia', serif;
             color: #333;
             overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: transparent;
-            z-index: 1000;
-            padding: 1rem 5%;
-            transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-top {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .language-switcher:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-
-        .language-switcher .flag {
-            font-size: 1.2rem;
-        }
-
-        .language-switcher .lang-text {
-            font-weight: 500;
-        }
-
-        .weather-widget {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        .weather-icon {
-            font-size: 1.2rem;
-        }
-
-        .logo {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #d97706;
-            letter-spacing: 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            position: relative;
-        }
-
-        .logo span {
-            white-space: nowrap;
-        }
-
-        .sun-icon {
-            width: 110px;
-            height: 55px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-
-        .sun-circle {
-            width: 110px;
-            height: 110px;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            animation: sunGlow 3s ease-in-out infinite;
-        }
-
-        .sun-ray {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 2px;
-            height: 12px;
-            background: linear-gradient(to bottom, #fbbf24, transparent);
-            transform-origin: top center;
-        }
-
-        .sun-ray:nth-child(2) { transform: translateX(-50%) rotate(-50deg); }
-        .sun-ray:nth-child(3) { transform: translateX(-50%) rotate(-35deg); }
-        .sun-ray:nth-child(4) { transform: translateX(-50%) rotate(-20deg); }
-        .sun-ray:nth-child(5) { transform: translateX(-50%) rotate(-10deg); }
-        .sun-ray:nth-child(6) { transform: translateX(-50%); }
-        .sun-ray:nth-child(7) { transform: translateX(-50%) rotate(10deg); }
-        .sun-ray:nth-child(8) { transform: translateX(-50%) rotate(20deg); }
-        .sun-ray:nth-child(9) { transform: translateX(-50%) rotate(35deg); }
-        .sun-ray:nth-child(10) { transform: translateX(-50%) rotate(50deg); }
-
-        @keyframes sunGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.8); }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        nav.scrolled .nav-links a {
-            color: #333;
-        }
-
-        .nav-links a:hover {
-            color: #d97706;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-top: 0.5rem;
-            overflow: hidden;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 0.8rem 1.2rem;
-            text-decoration: none;
-            display: block;
-            text-transform: none;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .dropdown-content a:hover {
-            background: #f8f9fa;
-            color: #d97706;
-        }
-
-        .dropdown-arrow {
-            font-size: 0.7rem;
-            transition: transform 0.3s;
-        }
-
-        .dropdown:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        .nav-widgets {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1001;
-            background: white;
-            padding: 0.6rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #d97706;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 3px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         /* Hero Slider */
@@ -482,6 +232,70 @@
             color: #555;
         }
 
+        /* Places to Stay Section */
+        .stay-section {
+            padding: 6rem 5%;
+            background: #f8f9fa;
+        }
+
+        .stay-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .stay-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
+        }
+
+        .stay-content:hover .stay-image {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .stay-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #d97706;
+        }
+
+        .stay-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .stay-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
         /* Worth Visiting Section */
         .worth-visiting {
             padding: 6rem 5%;
@@ -646,6 +460,26 @@
         }
 
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hiking-content,
+            .cards-grid,
+            .stay-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* OLD COMMENTED OUT @media (max-width: 768px) {
             .hamburger {
                 display: flex;
             }
@@ -711,74 +545,12 @@
             .hero-text {
                 font-size: 1rem;
             }
-        }
+        } */
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-top">
-            <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es')">
-                <span class="flag">🇲🇽</span>
-                <span class="lang-text">ES</span>
-            </a>
-            <div class="weather-widget">
-                <span class="weather-icon">☀️</span>
-                <span id="temperature">75°F</span>
-            </div>
-        </div>
-        <div class="nav-content">
-            <div class="logo">
-                <div class="sun-icon">
-                    <div class="sun-circle"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                    <div class="sun-ray"></div>
-                </div>
-                <span>SAN CARLOS</span>
-            </div>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="/en/">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" onclick="return false;">
-                        Discover
-                        <span class="dropdown-arrow">▼</span>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="closeMenu()">History</a>
-                        <a href="#" onclick="closeMenu()">Culture</a>
-                        <a href="#" onclick="closeMenu()">Events</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" onclick="return false;">
-                        Explore
-                        <span class="dropdown-arrow">▼</span>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="closeMenu()">Beaches</a>
-                        <a href="#" onclick="closeMenu()">Activities</a>
-                        <a href="#" onclick="closeMenu()">Dining</a>
-                    </div>
-                </li>
-                <li><a href="/en/places-to-stay/">Places to Stay</a></li>
-                <li><a href="#" onclick="closeMenu()">Contact</a></li>
-            </ul>
-
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Hero Slider -->
     <section class="hero-slider">
@@ -836,6 +608,19 @@
         </div>
     </section>
 
+    <!-- Places to Stay Section -->
+    <section class="stay-section">
+        <div class="stay-content">
+            <div class="stay-text slide-in-left">
+                <h2>Accommodations</h2>
+                <h3>Find Your Perfect Stay</h3>
+                <p>From luxurious oceanfront resorts to cozy vacation rentals, San Carlos offers a wide range of accommodations to suit every taste and budget. Wake up to stunning ocean views, enjoy world-class amenities, and experience the warmth of Sonoran hospitality.</p>
+                <a href="places-to-stay/" class="cta-button">Explore Places to Stay</a>
+            </div>
+            <img src="../loma-bella.jpg" alt="Luxury Accommodation in San Carlos" class="stay-image slide-in-right">
+        </div>
+    </section>
+
     <!-- Worth Visiting -->
     <section class="worth-visiting">
         <p class="section-title fade-in">Worth Visiting</p>
@@ -883,17 +668,33 @@
         <p>&copy; 2025 San Carlos Sonora Tourism. All rights reserved.</p>
     </footer>
 
+    <!-- Load navbar functionality -->
+    <script src="/navbar-scripts.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                // Initialize language switcher after navbar is loaded
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         const slider = document.getElementById('sliderContainer');
-        const nav = document.querySelector('nav');
 
         function goToSlide(index) {
             currentSlide = index;
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentSlide);
             });
@@ -906,20 +707,6 @@
 
         // Auto-advance slides
         setInterval(nextSlide, 5000);
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Save language preference
-        function saveLanguagePreference(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-        }
 
         // Scroll to content function with smooth animation
         function scrollToContent() {
@@ -947,32 +734,6 @@
 
             requestAnimationFrame(animation);
         }
-
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-
-        // Mobile dropdown toggle
-        document.querySelectorAll('.dropdown > a').forEach(function(dropdownLink) {
-            dropdownLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = this.parentElement;
-                    dropdown.classList.toggle('active');
-                }
-            });
-        });
 
         // Scroll animation observer
         const observerOptions = {

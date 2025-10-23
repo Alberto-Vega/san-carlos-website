@@ -1,0 +1,64 @@
+<nav>
+    <div class="nav-top">
+        <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es')">
+            <span class="flag">🇲🇽</span>
+            <span class="lang-text">ES</span>
+        </a>
+        <div class="weather-widget">
+            <span class="weather-icon">☀️</span>
+            <span id="temperature">75°F</span>
+        </div>
+    </div>
+    <div class="nav-content">
+        <div class="logo">
+            <div class="sun-icon">
+                <div class="sun-circle"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+            </div>
+            <span>SAN CARLOS</span>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/en/">Home</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">
+                    Discover
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">History</a>
+                    <a href="#">Culture</a>
+                    <a href="#">Events</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">
+                    Explore
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Beaches</a>
+                    <a href="#">Activities</a>
+                    <a href="#">Dining</a>
+                </div>
+            </li>
+            <li><a href="/en/places-to-stay/">Places to Stay</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>

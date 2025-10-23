@@ -1,0 +1,66 @@
+<nav>
+    <div class="nav-top">
+        <a href="/en/" class="language-switcher" onclick="saveLanguagePreference('en')">
+            <span class="flag">🇺🇸</span>
+            <span class="lang-text">EN</span>
+        </a>
+        <div class="weather-widget">
+            <span class="weather-icon">☀️</span>
+            <span id="temperature">75°F</span>
+        </div>
+    </div>
+    <div class="nav-content">
+        <div class="logo">
+            <div class="sun-icon">
+                <div class="sun-circle"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+            </div>
+            <span>SAN CARLOS</span>
+        </div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/es/">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">
+                    Descubre
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Historia</a>
+                    <a href="#">Cultura</a>
+                    <a href="#">Eventos</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" onclick="return false;">
+                    Explora
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Playas</a>
+                    <a href="#">Actividades</a>
+                    <a href="#">Gastronomía</a>
+                </div>
+            </li>
+            <li><a href="/es/lugares-para-hospedarse/">Dónde Hospedarse</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
