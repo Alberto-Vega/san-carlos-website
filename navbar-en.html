@@ -1,9 +1,5 @@
 <nav>
     <div class="nav-top">
-        <a href="/es/" class="language-switcher" onclick="saveLanguagePreference('es')">
-            <span class="flag">🇲🇽</span>
-            <span class="lang-text">ES</span>
-        </a>
         <div class="weather-widget">
             <span class="weather-icon">☀️</span>
             <span id="temperature">75°F</span>
@@ -53,6 +49,12 @@
             </li>
             <li><a href="/en/places-to-stay/">Places to Stay</a></li>
             <li><a href="#">Contact</a></li>
+            <li class="mobile-language-switcher">
+                <a href="/es/" class="language-switcher-mobile" onclick="saveLanguagePreference('es')">
+                    <span class="flag">🇲🇽</span>
+                    <span class="lang-text">Español</span>
+                </a>
+            </li>
         </ul>
 
         <div class="hamburger" onclick="toggleMenu()">

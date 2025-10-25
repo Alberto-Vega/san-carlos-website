@@ -288,6 +288,37 @@ nav.scrolled .nav-links a {
         color: #333;
     }
 
+    .mobile-language-switcher {
+        margin-top: auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .language-switcher-mobile {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0;
+        text-decoration: none;
+        color: #333 !important;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .language-switcher-mobile:hover {
+        color: #d97706 !important;
+    }
+
+    .language-switcher-mobile .flag {
+        font-size: 1.5rem;
+    }
+
+    .language-switcher-mobile .lang-text {
+        font-size: 1.2rem;
+    }
+
     .dropdown-content {
         position: static;
         display: none;

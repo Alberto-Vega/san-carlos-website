@@ -30,45 +30,40 @@ function saveLanguagePreference(lang) {
 
 // Function to initialize language switcher
 function initLanguageSwitcher() {
-    const languageSwitcher = document.querySelector('.language-switcher');
+    const mobileSwitcher = document.querySelector('.language-switcher-mobile');
 
-    if (languageSwitcher) {
-        let currentPath = window.location.pathname;
+    let currentPath = window.location.pathname;
 
-        // Normalize path to ensure trailing slash
-        if (!currentPath.endsWith('/')) {
-            currentPath = currentPath + '/';
-        }
+    // Normalize path to ensure trailing slash
+    if (!currentPath.endsWith('/')) {
+        currentPath = currentPath + '/';
+    }
 
-        // Map of English to Spanish paths
-        const pathMap = {
-            '/en/': '/es/',
-            '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
-            '/es/': '/en/',
-            '/es/lugares-para-hospedarse/': '/en/places-to-stay/'
-        };
+    // Map of English to Spanish paths
+    const pathMap = {
+        '/en/': '/es/',
+        '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
+        '/es/': '/en/',
+        '/es/lugares-para-hospedarse/': '/en/places-to-stay/'
+    };
 
-        // Update the language switcher href based on current page
-        if (pathMap[currentPath]) {
-            const targetPath = pathMap[currentPath];
+    // Update the mobile language switcher href based on current page
+    if (pathMap[currentPath] && mobileSwitcher) {
+        const targetPath = pathMap[currentPath];
 
-            // Clone the element to remove all event listeners
-            const newSwitcher = languageSwitcher.cloneNode(true);
-            languageSwitcher.parentNode.replaceChild(newSwitcher, languageSwitcher);
+        const newMobileSwitcher = mobileSwitcher.cloneNode(true);
+        mobileSwitcher.parentNode.replaceChild(newMobileSwitcher, mobileSwitcher);
+        newMobileSwitcher.href = targetPath;
+        newMobileSwitcher.removeAttribute('onclick');
 
-            // Update href and remove onclick
-            newSwitcher.href = targetPath;
-            newSwitcher.removeAttribute('onclick');
-
-            // Add new click handler
-            newSwitcher.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const lang = targetPath.startsWith('/es/') ? 'es' : 'en';
-                saveLanguagePreference(lang);
-                window.location.href = targetPath;
-            }, true);
-        }
+        newMobileSwitcher.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const lang = targetPath.startsWith('/es/') ? 'es' : 'en';
+            saveLanguagePreference(lang);
+            closeMenu(); // Close the mobile menu when switching languages
+            window.location.href = targetPath;
+        }, true);
     }
 }
 
