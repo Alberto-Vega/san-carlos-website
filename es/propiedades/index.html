@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentas Vacacionales en San Carlos Sonora | Encuentra tu Hospedaje Perfecto</title>
+    <meta name="description" content="Explora rentas vacacionales, propiedades frente al mar y alojamientos en San Carlos Sonora. Reserva tu escapada perfecta en el Mar de Cortés.">
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 50vh;
+            min-height: 350px;
+            background-image: url('/loma-bella.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1760px;
+            margin: 0 auto;
+            padding: 60px 40px 40px 40px;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .results-count {
+            font-size: 14px;
+            color: #717171;
+        }
+
+        /* Filters Bar */
+        .filters-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #EBEBEB;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .filter-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border: 1px solid #DDDDDD;
+            border-radius: 32px;
+            background: white;
+            font-size: 14px;
+            font-weight: 600;
+            color: #222;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .filter-button:hover {
+            border-color: #222;
+        }
+
+        .filter-button.active {
+            background: #222;
+            color: white;
+            border-color: #222;
+        }
+
+        /* Properties Grid */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px 24px;
+        }
+
+        /* Property Card */
+        .property-card {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .property-card:hover {
+            transform: scale(1.02);
+        }
+
+        .property-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .property-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .favorite-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease;
+        }
+
+        .favorite-button:hover {
+            transform: scale(1.1);
+        }
+
+        .favorite-button svg {
+            width: 18px;
+            height: 18px;
+            stroke: #222;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Property Info */
+        .property-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .property-location {
+            font-size: 15px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .property-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+        }
+
+        .star-icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        .property-type {
+            font-size: 15px;
+            color: #717171;
+        }
+
+        .property-dates {
+            font-size: 15px;
+            color: #717171;
+        }
+
+        .property-price {
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        .property-price strong {
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 1128px) {
+            .properties-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .main-container {
+                padding: 40px 24px 24px 24px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .properties-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .empty-state p {
+            font-size: 16px;
+            color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Rentas Vacacionales en San Carlos</h1>
+            <p>Encuentra tu escapada perfecta frente al mar en el Mar de Cortés</p>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <p class="results-count">Mostrando 3 propiedades</p>
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="filters-bar">
+            <button class="filter-button active">Todas las propiedades</button>
+            <button class="filter-button">Frente al mar</button>
+            <button class="filter-button">Vista al mar</button>
+            <button class="filter-button">Alberca</button>
+            <button class="filter-button">Admite mascotas</button>
+        </div>
+
+        <!-- Properties Grid -->
+        <div class="properties-grid">
+            <!-- Property 1 -->
+            <div class="property-card">
+                <div class="property-image-container">
+                    <img src="/casa_allea.jpg" alt="Villa de lujo frente al mar" class="property-image">
+                    <button class="favorite-button" aria-label="Agregar a favoritos">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path>
+                        </svg>
+                    </button>
+                    <div class="property-badge">Favorito de huéspedes</div>
+                </div>
+                <div class="property-info">
+                    <div class="property-header">
+                        <span class="property-location">San Carlos, Sonora</span>
+                        <div class="property-rating">
+                            <svg class="star-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.483-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill="#222"></path>
+                            </svg>
+                            <span>4.95 (127)</span>
+                        </div>
+                    </div>
+                    <p class="property-type">Villa completa · 4 recámaras</p>
+                    <p class="property-dates">Disponible todo el año</p>
+                    <p class="property-price"><strong>$350</strong> por noche</p>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="property-card">
+                <div class="property-image-container">
+                    <img src="/loma-bella.jpg" alt="Acogedor condominio frente al mar" class="property-image">
+                    <button class="favorite-button" aria-label="Agregar a favoritos">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="property-info">
+                    <div class="property-header">
+                        <span class="property-location">San Carlos, Sonora</span>
+                        <div class="property-rating">
+                            <svg class="star-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.483-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill="#222"></path>
+                            </svg>
+                            <span>4.88 (93)</span>
+                        </div>
+                    </div>
+                    <p class="property-type">Condominio · 2 recámaras</p>
+                    <p class="property-dates">Disponible todo el año</p>
+                    <p class="property-price"><strong>$180</strong> por noche</p>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="property-card">
+                <div class="property-image-container">
+                    <img src="/pristine_beaches.jpg" alt="Apartamento moderno con vista al mar" class="property-image">
+                    <button class="favorite-button" aria-label="Agregar a favoritos">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="property-info">
+                    <div class="property-header">
+                        <span class="property-location">San Carlos, Sonora</span>
+                        <div class="property-rating">
+                            <svg class="star-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.483-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill="#222"></path>
+                            </svg>
+                            <span>4.92 (68)</span>
+                        </div>
+                    </div>
+                    <p class="property-type">Apartamento · 3 recámaras</p>
+                    <p class="property-dates">Disponible todo el año</p>
+                    <p class="property-price"><strong>$220</strong> por noche</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Load navbar functionality -->
+    <script src="/navbar-scripts.js"></script>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-es.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Favorite button functionality
+        document.querySelectorAll('.favorite-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const svg = this.querySelector('svg path');
+                if (svg.hasAttribute('fill')) {
+                    svg.removeAttribute('fill');
+                    svg.setAttribute('fill', 'none');
+                } else {
+                    svg.setAttribute('fill', '#FF385C');
+                }
+            });
+        });
+
+        // Property card click
+        document.querySelectorAll('.property-card').forEach(card => {
+            card.addEventListener('click', function() {
+                alert('¡Página de detalles de la propiedad próximamente!');
+            });
+        });
+    </script>
+</body>
+</html>

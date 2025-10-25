@@ -43,8 +43,10 @@ function initLanguageSwitcher() {
     const pathMap = {
         '/en/': '/es/',
         '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
+        '/en/properties/': '/es/propiedades/',
         '/es/': '/en/',
-        '/es/lugares-para-hospedarse/': '/en/places-to-stay/'
+        '/es/lugares-para-hospedarse/': '/en/places-to-stay/',
+        '/es/propiedades/': '/en/properties/'
     };
 
     // Update the mobile language switcher href based on current page
