@@ -44,9 +44,15 @@ function initLanguageSwitcher() {
         '/en/': '/es/',
         '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
         '/en/properties/': '/es/propiedades/',
+        '/en/properties/casa-allea/': '/es/propiedades/casa-allea/',
+        '/en/properties/san-carlos-condo/': '/es/propiedades/condominio-san-carlos/',
+        '/en/properties/tranquil-solimar-escape/': '/es/propiedades/tranquil-solimar-escape/',
         '/es/': '/en/',
         '/es/lugares-para-hospedarse/': '/en/places-to-stay/',
-        '/es/propiedades/': '/en/properties/'
+        '/es/propiedades/': '/en/properties/',
+        '/es/propiedades/casa-allea/': '/en/properties/casa-allea/',
+        '/es/propiedades/condominio-san-carlos/': '/en/properties/san-carlos-condo/',
+        '/es/propiedades/tranquil-solimar-escape/': '/en/properties/tranquil-solimar-escape/'
     };
 
     // Update the mobile language switcher href based on current page

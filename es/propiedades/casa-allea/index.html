@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Allea - Familiar y Eventos - Renta Vacacional San Carlos</title>
+    <meta name="description" content="Espectacular casa con vista al mar en San Carlos. Capacidad para 9 huéspedes con alberca privada, cancha de pickleball, bar palapa. Perfecta para familias y eventos. A 3 cuadras de la playa, 4 cuadras de la marina.">
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+
+    <!-- Floating Contact Buttons CSS -->
+    <link rel="stylesheet" href="/floating-contact-buttons.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #222;
+            line-height: 1.43;
+            padding-top: 120px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header Section */
+        .property-header {
+            padding: 48px 0 24px 0;
+        }
+
+        .property-title {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .property-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .star {
+            color: #222;
+        }
+
+        .property-meta a {
+            color: #222;
+            text-decoration: underline;
+        }
+
+        .property-meta span {
+            color: #717171;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 8px;
+            height: 504px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+
+        .gallery-image:hover {
+            filter: brightness(0.9);
+        }
+
+        .main-image {
+            grid-row: 1 / 3;
+        }
+
+        /* Hide images beyond the 5th on desktop */
+        .gallery-image:nth-child(n+6) {
+            display: none;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
+            margin-bottom: 48px;
+        }
+
+        /* Left Column */
+        .property-details {
+            border-bottom: 1px solid #EBEBEB;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+        }
+
+        .property-details h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .property-stats {
+            font-size: 16px;
+            color: #222;
+        }
+
+        .section {
+            border-bottom: 1px solid #EBEBEB;
+            padding-bottom: 32px;
+            margin-bottom: 32px;
+        }
+
+        .section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #222;
+        }
+
+        /* Amenities Grid */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 16px;
+        }
+
+        .amenity-item i {
+            font-size: 24px;
+            color: #222;
+            width: 24px;
+        }
+
+        /* Sleeping Arrangements */
+        .sleeping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .sleeping-item {
+            border: 1px solid #DDDDDD;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .sleeping-item i {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .sleeping-item h4 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .sleeping-item p {
+            font-size: 14px;
+            color: #717171;
+        }
+
+        /* Booking Widget */
+        .booking-widget {
+            position: sticky;
+            top: 100px;
+            border: 1px solid #DDDDDD;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+            height: fit-content;
+        }
+
+        .booking-price {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .booking-price span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e;
+        }
+
+        .phone-btn {
+            background: #007aff;
+            color: white;
+        }
+
+        .phone-btn:hover {
+            background: #0051d5;
+        }
+
+        .booking-note {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #EBEBEB;
+            text-align: center;
+            font-size: 14px;
+            color: #717171;
+        }
+
+        /* Reviews Section */
+        .reviews-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .reviews-header h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .review-card {
+            border-bottom: 1px solid #EBEBEB;
+            padding: 24px 0;
+        }
+
+        .review-card:last-child {
+            border-bottom: none;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #717171;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .reviewer-details h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .reviewer-details p {
+            font-size: 14px;
+            color: #717171;
+        }
+
+        .review-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Location Section */
+        .location-map {
+            width: 100%;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 24px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .booking-widget {
+                position: static;
+                margin-bottom: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            body {
+                padding-top: 80px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 240px);
+                height: auto;
+            }
+
+            .main-image {
+                grid-row: 1;
+            }
+
+            /* Show all images on mobile */
+            .gallery-image:nth-child(n+6) {
+                display: block;
+            }
+
+            .property-title {
+                font-size: 22px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="property-header">
+            <h1 class="property-title">Casa Allea. Familiar y eventos. Con vista al mar</h1>
+            <div class="property-meta">
+                <div class="rating">
+                    <span class="star">★</span>
+                    <strong>4.92</strong>
+                </div>
+                <span>·</span>
+                <a href="#reviews">25 reseñas</a>
+                <span>·</span>
+                <span>San Carlos Nuevo Guaymas, Sonora, México</span>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="https://a0.muscache.com/im/pictures/58a40544-f07f-4eac-afe5-05e203966f68.jpg" alt="Casa Allea vista al mar" class="gallery-image main-image">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-53008756/original/fc84a8a9-07f3-461f-ad92-cd82e56aa123.jpeg" alt="Casa Allea área de alberca" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/69f991b2-d340-4d4c-8e4e-5aee352f2c6f.jpg" alt="Casa Allea sala de estar" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-53008756/original/6a6febc6-2452-46fd-af32-037aaf5a1d13.jpeg" alt="Casa Allea bar palapa" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-53008756/original/d41d3876-fae2-4313-964a-d530abc76e38.jpeg" alt="Casa Allea recámara" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-53008756/original/df614cb0-2c62-4f1d-b007-fb4c1aa8795c.jpeg" alt="Casa Allea cocina" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/cb871d9d-8c3f-4667-b425-efe031917078.jpg" alt="Casa Allea espacio exterior" class="gallery-image">
+            <img src="https://a0.muscache.com/im/pictures/f644eb6c-f815-4f62-a36b-f684cbad56dd.jpg" alt="Casa Allea vista exterior" class="gallery-image">
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-grid">
+            <div>
+                <!-- Property Details -->
+                <div class="property-details">
+                    <h2>Casa completa en San Carlos</h2>
+                    <p class="property-stats">9 huéspedes · 4 recámaras · 5 camas · 3 baños</p>
+                </div>
+
+                <!-- Description -->
+                <div class="section">
+                    <h3>Acerca de este lugar</h3>
+                    <p>¡Bienvenido a Casa Allea, tu refugio soñado con vista al mar en San Carlos! Esta espectacular casa familiar es perfecta para crear recuerdos inolvidables con tus seres queridos o para organizar eventos especiales.</p>
+                    <br>
+                    <p>Disfruta de impresionantes vistas al mar desde esta casa bellamente diseñada que cuenta con alberca privada, tu propia cancha de pickleball y un hermoso bar palapa, perfecto para el entretenimiento. La casa es completamente accesible para sillas de ruedas y está diseñada cuidadosamente para acomodar familias y grupos de hasta 9 huéspedes.</p>
+                    <br>
+                    <p>Ubicada a solo 3 cuadras de la playa prístina y a 4 cuadras de la vibrante marina, Casa Allea ofrece la combinación perfecta de privacidad y conveniencia. Ya sea que estés planeando unas vacaciones familiares, una escapada con amigos o una celebración especial, esta excepcional propiedad proporciona todo lo que necesitas para una estadía increíble en San Carlos.</p>
+                    <br>
+                    <p>La propiedad cuenta con amenidades modernas en todo su interior, cómodos arreglos para dormir y amplio espacio al aire libre para disfrutar del hermoso clima de Sonora. Organiza eventos, juega pickleball, nada en tu alberca privada o simplemente relájate mientras disfrutas de las impresionantes vistas al mar.</p>
+                </div>
+
+                <!-- Amenities -->
+                <div class="section">
+                    <h3>Lo que ofrece este lugar</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <i class="fa fa-eye"></i>
+                            <span>Vista al mar</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-life-ring"></i>
+                            <span>Alberca privada</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-gamepad"></i>
+                            <span>Cancha de pickleball</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-glass"></i>
+                            <span>Bar palapa</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-wheelchair"></i>
+                            <span>Accesible para sillas de ruedas</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-users"></i>
+                            <span>Apto para eventos</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-wifi"></i>
+                            <span>WiFi</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-car"></i>
+                            <span>Estacionamiento gratuito</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-snowflake-o"></i>
+                            <span>Aire acondicionado</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-cutlery"></i>
+                            <span>Cocina completa</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-television"></i>
+                            <span>TV</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-fire"></i>
+                            <span>Chimenea interior</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-umbrella"></i>
+                            <span>Acceso a la playa</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-bath"></i>
+                            <span>Agua caliente</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-tint"></i>
+                            <span>Lavadora y secadora</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fa fa-coffee"></i>
+                            <span>Cafetera</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews -->
+                <div class="section" id="reviews">
+                    <div class="reviews-header">
+                        <span class="star">★</span>
+                        <h3>4.92 · 25 reseñas</h3>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">M</div>
+                            <div class="reviewer-details">
+                                <h4>María</h4>
+                                <p>Estadía reciente</p>
+                            </div>
+                        </div>
+                        <p class="review-text">¡Casa Allea superó todas nuestras expectativas! Las vistas al mar son impresionantes, y la alberca privada y la cancha de pickleball mantuvieron entretenida a toda la familia. La ubicación es perfecta: cerca de todo pero aún se siente privado. ¡Altamente recomendado!</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">J</div>
+                            <div class="reviewer-details">
+                                <h4>Juan</h4>
+                                <p>Mes pasado</p>
+                            </div>
+                        </div>
+                        <p class="review-text">¡Casa perfecta para nuestra reunión familiar! El bar palapa fue un éxito, y nos encantó tener nuestra propia cancha de pickleball. La casa es espaciosa, limpia y tiene todo lo que necesitas. La accesibilidad para sillas de ruedas hizo posible que toda nuestra familia disfrutara junta.</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">S</div>
+                            <div class="reviewer-details">
+                                <h4>Sara</h4>
+                                <p>Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="review-text">¡Organizamos una celebración especial de cumpleaños aquí y fue absolutamente perfecto! La propiedad es hermosa, bien mantenida y la ubicación es ideal. A solo una corta caminata de la playa y la marina. ¡Casa Allea hizo nuestro viaje inolvidable!</p>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="section">
+                    <h3>Dónde estarás</h3>
+                    <p style="margin-bottom: 16px;">San Carlos Nuevo Guaymas, Sonora, México</p>
+                    <p>Casa Allea está perfectamente situada a solo 3 cuadras de las hermosas playas y a 4 cuadras del animado distrito de la marina. Disfruta de fácil acceso a los mejores restaurantes de San Carlos, actividades acuáticas, compras y vida nocturna. El Mar de Cortés ofrece oportunidades de buceo, pesca y kayak de clase mundial justo a la puerta de tu casa.</p>
+                    <div class="location-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.8!2d-111.04816!3d27.96262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDU3JzQ1LjQiTiAxMTHCsDAyJzUzLjQiVw!5e0!3m2!1ses!2smx!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Widget -->
+            <div>
+                <div class="booking-widget">
+                    <div class="booking-price">
+                        Contacta para tarifas
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="https://api.whatsapp.com/send?phone=14803524465&text=¡Hola!%20Me%20interesa%20Casa%20Allea" class="contact-btn whatsapp-btn" target="_blank">
+                            <i class="fa fa-whatsapp"></i>
+                            Consultar por WhatsApp
+                        </a>
+                        <a href="tel:+14803524465" class="contact-btn phone-btn">
+                            <i class="fa fa-phone"></i>
+                            Llamar
+                        </a>
+                    </div>
+
+                    <div class="booking-note">
+                        <p>¡Contáctanos para disponibilidad, tarifas y ofertas especiales. Respondemos en 24 horas!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Buttons placeholder -->
+    <div id="floating-buttons-placeholder"></div>
+
+    <!-- Load floating contact buttons -->
+    <script>
+        fetch('/floating-contact-buttons-es.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('floating-buttons-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading floating buttons:', error));
+    </script>
+
+    <script>
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
+    </script>
+
+    <!-- Load navbar functionality -->
+    <script src="/navbar-scripts.js"></script>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-es.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>
