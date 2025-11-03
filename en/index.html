@@ -88,6 +88,18 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
+        .hero-content-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-content-link:hover .hero-content {
+            transform: scale(1.05);
+        }
+
         /* Scroll Down Button */
         .scroll-down {
             position: absolute;
@@ -566,11 +578,13 @@
             </div>
             <div class="slide" style="background-image: url('../pristine_beaches.jpg');">
                 <div class="slide-overlay">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Pristine Beaches</h1>
-                        <h2 class="hero-subtitle">Where desert meets the sea</h2>
-                        <p class="hero-text">Discover miles of unspoiled coastline, hidden coves, and turquoise waters perfect for swimming, snorkeling, and relaxation under the Mexican sun.</p>
-                    </div>
+                    <a href="/en/beaches/" class="hero-content-link">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Pristine Beaches</h1>
+                            <h2 class="hero-subtitle">Where desert meets the sea</h2>
+                            <p class="hero-text">Discover miles of unspoiled coastline, hidden coves, and turquoise waters perfect for swimming, snorkeling, and relaxation under the Mexican sun.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="slide" style="background-image: url('../kayaking_el_soldado.jpg');">

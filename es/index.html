@@ -87,6 +87,18 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
+        .hero-content-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-content-link:hover .hero-content {
+            transform: scale(1.05);
+        }
+
         /* Scroll Down Button */
         .scroll-down {
             position: absolute;
@@ -497,11 +509,13 @@
             </div>
             <div class="slide" style="background-image: url('../pristine_beaches.jpg');">
                 <div class="slide-overlay">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Playas Vírgenes</h1>
-                        <h2 class="hero-subtitle">Donde el desierto se encuentra con el mar</h2>
-                        <p class="hero-text">Descubre kilómetros de costa virgen, calas escondidas y aguas turquesas perfectas para nadar, hacer snorkel y relajarse bajo el sol mexicano.</p>
-                    </div>
+                    <a href="/es/playas/" class="hero-content-link">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Playas Vírgenes</h1>
+                            <h2 class="hero-subtitle">Donde el desierto se encuentra con el mar</h2>
+                            <p class="hero-text">Descubre kilómetros de costa virgen, calas escondidas y aguas turquesas perfectas para nadar, hacer snorkel y relajarse bajo el sol mexicano.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="slide" style="background-image: url('../kayaking_el_soldado.jpg');">

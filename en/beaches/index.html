@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Carlos Sonora Beaches - Ultimate Guide to the Best Beaches | San Carlos Mexico</title>
+    <meta name="description" content="Discover the best san carlos sonora beaches on the Sea of Cortez. Complete guide to Playa Los Algodones, Playa San Francisco, Piedras Pintas and more with directions, coordinates and photos.">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/beaches/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/playas/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/en/beaches/" />
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+
+    <!-- Floating Contact Buttons CSS -->
+    <link rel="stylesheet" href="/floating-contact-buttons.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('/pristine_beaches.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-style: italic;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .intro-section {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Beach Section */
+        .beach-section {
+            margin-bottom: 5rem;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .beach-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .beach-header {
+            margin-bottom: 2rem;
+        }
+
+        .beach-header h3 {
+            font-size: 2.2rem;
+            color: #d97706;
+            margin-bottom: 0.5rem;
+        }
+
+        .beach-coordinates {
+            font-size: 0.95rem;
+            color: #6b7280;
+            font-family: 'Courier New', monospace;
+        }
+
+        .beach-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .beach-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .beach-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .beach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .beach-info h4 {
+            font-size: 1.3rem;
+            color: #d97706;
+            margin-bottom: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .beach-info h4:first-of-type {
+            margin-top: 0;
+        }
+
+        .beach-info p, .beach-info ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .beach-info ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .beach-info li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: #f8f9fa;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+        }
+
+        .tips-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tips-content h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .tip-card h4 {
+            font-size: 1.2rem;
+            color: #d97706;
+            margin-bottom: 0.8rem;
+        }
+
+        .tip-card p, .tip-card ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .tip-card ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .beach-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 3rem 5%;
+            }
+
+            .beach-images {
+                grid-template-columns: 1fr;
+            }
+
+            .beach-section {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">San Carlos Sonora Beaches</h1>
+            <p class="hero-subtitle">Discover the stunning beaches of the Sea of Cortez</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <div class="intro-section">
+            <h2>San Carlos Sonora - Beaches Guide</h2>
+            <p>Nestled on the Sea of Cortez in Sonora, Mexico, San Carlos offers a beautiful coastline of golden sand, clear water and spectacular desert-meets-sea vistas. Below are some of the top San Carlos Sonora beaches, including ones with semi-private or quieter access, complete with coordinates and directions.</p>
+        </div>
+
+        <!-- Beach 1: Playa Los Algodones -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>1. Playa Los Algodones</h3>
+                <p class="beach-coordinates">Approx. near San Carlos, Sonora; entry point along Blvd. "Choya" after Carretera 124</p>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://beaches-searcher.com/images/beaches/484201418/MX201418.jpg" alt="Playa Los Algodones San Carlos Sonora white sand dunes" class="beach-image">
+                <img src="https://backpackandsnorkel.com/images2/San-Carlos-Playa-Los-Algodones6_50.webp" alt="Snorkeling at Playa Los Algodones" class="beach-image">
+                <img src="https://mediaim.expedia.com/destination/2/22beaf7ca86c8ddd533742d1086de0ff.jpg" alt="Los Algodones beach panoramic view" class="beach-image">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipNEz-xGvhq5H9_JjUqG5yKN8TvV8mW0XYE0qBhf=s1600" alt="Los Algodones San Carlos Sonora beach view" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>From the town of San Carlos/Guaymas take Carretera 124 towards the coast, follow signs for "Algodones" approximately 13 km, then turn right on Blvd. Choya approximately 7 km until the return/U-turn of the beach entry.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Known for its soft "cotton-like" white sand dunes</li>
+                        <li>Excellent snorkeling near rocks</li>
+                        <li>Great kite-boarding wind conditions</li>
+                        <li>Stunning desert-meets-sea landscape</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Some parts of the beachfront are gated/residential, but public access exists via the described entry. As one guide notes, "Much of the access to the beach is gated … but we were never charged and told the guard we wanted to go to the beach."</p>
+
+                    <h4>Semi-Private Vibe</h4>
+                    <p>Because of residential developments fronting the sand, the feel can be quieter than major hotel beaches—good for those seeking a more tranquil beach experience with walking access.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 2: Playa San Francisco -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>2. Playa San Francisco (Pilar Beach area)</h3>
+                <p class="beach-coordinates">Coordinates: ~27.9634° N, –111.0183° W</p>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://beaches-searcher.com/images/beaches/484201425/MX201425.jpg" alt="Playa San Francisco San Carlos Sonora" class="beach-image">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipOsRzLTwQiztUPKFlfIW_MeMbwtugBgRh9uvh3r=s1600" alt="San Francisco beach San Carlos family friendly" class="beach-image">
+                <img src="https://venture-out.s3.us-east-2.amazonaws.com/guide-images/1745269554660-media%3Fkey%3DAIzaSyCkpNVocP1IwgtIz1s4aaTb1GgwMdUtzBw%26maxHeightPx%3D800%26maxWidthPx%3D800" alt="Playa San Francisco panoramic view" class="beach-image">
+                <img src="https://venture-out.s3.us-east-2.amazonaws.com/guide-images/1745269554715-media%3Fkey%3DAIzaSyCkpNVocP1IwgtIz1s4aaTb1GgwMdUtzBw%26maxHeightPx%3D800%26maxWidthPx%3D800" alt="Swimming at Playa San Francisco" class="beach-image">
+                <img src="https://media.vrbo.com/lodging/34000000/33940000/33935400/33935356/558ebfc0.jpg?impolicy=resizecrop&ra=fill&rh=575&rw=575" alt="San Francisco beach condos San Carlos" class="beach-image">
+                <img src="https://media.vrbo.com/lodging/34000000/33940000/33935400/33935356/0ab8663c.jpg?impolicy=resizecrop&ra=fill&rh=575&rw=575" alt="Playa San Francisco beach access" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>From San Carlos town follow the main beach boulevard towards Condominios Pilar / Bahia Delfín, parking in the dirt lot to the right of Bahia Delfín.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>One of the largest beaches in the San Carlos area</li>
+                        <li>Gentle waves and sandy bottom</li>
+                        <li>Perfect for families and children</li>
+                        <li>Great for swimming and shell-collecting</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Public beach by law in Mexico. Facilities are more limited in some spots; bring shade and umbrella for comfort.</p>
+
+                    <h4>Walking Access</h4>
+                    <p>Easily accessible from condo/resort areas, making it convenient for visitors staying nearby or wanting a simpler arrival.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 3: Playa Piedras Pintas -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>3. Playa Piedras Pintas</h3>
+                <p class="beach-coordinates">Coordinates: ~27.94112° N, –111.09041° W</p>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://www.whatsupsancarlos.com/wp-content/uploads/2010/02/Playa-Piedra-Pintas-300x225.jpg" alt="Playa Piedras Pintas San Carlos Sonora" class="beach-image">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipOtGzudK7XGbD6o_ECqICDqbdru4s1VQf1h_E3v=s1600" alt="Piedras Pintas rock formations" class="beach-image">
+                <img src="https://beaches-searcher.com/images/beaches/484201421/MX201421.jpg" alt="Snorkeling Piedras Pintas beach" class="beach-image">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipMDQppAw6jZMYccMK4uZI6Zgaws8bIiRxdepVrt=s1600" alt="Piedras Pintas cove San Carlos" class="beach-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Playa_Piedras_Pintas_-_Piedras_Pintas_Beach.JPG/1280px-Playa_Piedras_Pintas_-_Piedras_Pintas_Beach.JPG" alt="Playa Piedras Pintas natural beach" class="beach-image">
+                <img src="https://whatsupsancarlos.com/wp-content/uploads/2016/06/Mirador-San-Carlos-2018.jpg" alt="View from Mirador San Carlos overlooking beaches" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>Located at the base of Cerro Tetakawi; drive from San Carlos to the cove access; parking is available though minimal infrastructure exists.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Quiet and less crowded than major beaches</li>
+                        <li>Excellent for snorkeling and diving</li>
+                        <li>Beautiful rock points and formations</li>
+                        <li>Natural, undeveloped beach setting</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>No major services or shaded structures available, so bring your own gear, water, and supplies for a comfortable visit.</p>
+
+                    <h4>Semi-Private Vibe</h4>
+                    <p>This is more secluded than major hotel beaches. Minimal development means a more natural feel, with walking access from parking area.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 4: Playa La Posada -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>4. Playa La Posada (Posada Beach)</h3>
+                <p class="beach-coordinates">Located near La Posada Condos, San Carlos</p>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://casago.com/san-carlos/wp-content/uploads/sites/14/2019/09/web-activities-AdobeStock_140291362.jpg" alt="La Posada beach San Carlos Sonora" class="beach-image">
+                <img src="https://visitmexico.com/media/usercontent/6836034a5086f-6834d291546ae-San-Carlos---Panor%C3%A1mica-Cerro-Tetakawi_gmxdot_jpg" alt="Cerro Tetakawi from La Posada beach" class="beach-image">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/198351573.jpg?hp=1&k=a807ce6973a124a6a792a629a6c821f99dd639adb9e76b9c7c2c03710850bfb6&o=" alt="La Posada beach view" class="beach-image">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/659089277.jpg?hp=1&k=bf0c11f04d6ec264a0677c417614737b153f5275b619a3f30f264691f75413c1&o=" alt="Posada beach protected cove" class="beach-image">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/68/38/e1/nobody-at-the-pool-very.jpg?h=500&s=1&w=900" alt="La Posada resort and beach" class="beach-image">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/1d/d9/38/balcony-view.jpg?h=500&s=1&w=900" alt="Balcony view of La Posada beach" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>Short drive from main road in San Carlos — turn left at the sign for La Posada Condos, drive toward the water; there is parking lot behind La Palapa Griega restaurant.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Protected cove ideal for swimming</li>
+                        <li>Shade available under palapas</li>
+                        <li>Very family-friendly atmosphere</li>
+                        <li>Nearby restaurant facilities</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Easier parking and direct beach access; good fit for visitors staying in that neighborhood or families with children.</p>
+
+                    <h4>Amenities</h4>
+                    <p>Restaurant nearby (La Palapa Griega), palapa shade structures, and generally calmer waters make this an excellent choice for a relaxed beach day.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 5: Playa Marinaterra -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>5. Playa Marinaterra / Beach Club Area</h3>
+                <p class="beach-coordinates">Located at Marinaterra Resort Zone, San Carlos</p>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://en.marinaterra.com/wp-content/uploads/beach_club_3.png" alt="Marinaterra beach club San Carlos" class="beach-image">
+                <img src="https://en.marinaterra.com/wp-content/uploads/beach_club_5.png" alt="Marinaterra beach amenities" class="beach-image">
+                <img src="https://en.marinaterra.com/wp-content/uploads/actividades_kayak_3.jpg" alt="Kayaking at Marinaterra beach" class="beach-image">
+                <img src="https://en.marinaterra.com/wp-content/uploads/hero-actividades-e1512584581288-1400x467.jpg" alt="Water sports Marinaterra San Carlos" class="beach-image">
+                <img src="https://www.kayak.com/rimg/himg/e1/98/4c/expedia_group-93506-246618509-538171.jpg?crop=true&height=607&width=836" alt="Marinaterra resort beach view" class="beach-image">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/211059322.jpg?k=e423c66ff2e6f8170a61a22c7200461a445de0c67055dd11b18f1edb6479f8bd&o=" alt="Marinaterra beach area" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>This beach is part of the resort/beach-club zone; drive along the coast from San Carlos town toward the marina and resorts.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Less busy than large public beaches</li>
+                        <li>Excellent water-sport access (kayak, snorkel)</li>
+                        <li>Relaxed, resort-style setting</li>
+                        <li>Good facilities and amenities</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Although technically a public beach, the association with resort/clubs gives it a calmer, more curated feel.</p>
+
+                    <h4>Semi-Private Aspect</h4>
+                    <p>Walking access from resort zone. The beach club atmosphere provides a more organized beach experience with available equipment rentals and services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips Section -->
+    <section class="tips-section">
+        <div class="tips-content">
+            <h2>Directions & Travel Tips for San Carlos Sonora Beaches</h2>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Getting to San Carlos</h4>
+                    <p>San Carlos is accessed via Carretera Federal 15 (Mexico 15) to the exit for San Carlos/Guaymas, then follow Blvd./Carretera 124 to the coastal neighborhood.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>What to Bring</h4>
+                    <ul>
+                        <li>Shade, water & sun protection</li>
+                        <li>Not all beaches have full amenities</li>
+                        <li>Snorkeling gear for Algodones and Piedras Pintas</li>
+                        <li>Umbrella for beaches without shade</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Best Beaches For Activities</h4>
+                    <ul>
+                        <li><strong>Snorkeling/Kayaking:</strong> Algodones & Piedras Pintas</li>
+                        <li><strong>Families:</strong> San Francisco or La Posada</li>
+                        <li><strong>Kite-boarding:</strong> Algodones (windier months)</li>
+                        <li><strong>Quiet/Semi-private:</strong> Marinaterra</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Beach Access</h4>
+                    <p>All beaches are technically public by Mexican law (the shore is public even if there's adjacent private property). Look for signage like "acceso público" or small walking paths.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Parking</h4>
+                    <p>Many beach entries have dirt parking lots. Drive carefully especially in sandy access areas. Most parking is free, though some gated communities may have attendants.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Facilities</h4>
+                    <p>Some beaches have restaurants/restrooms (Algodones near Soggy Peso, Posada behind La Palapa Griega) whereas others (Piedras Pintas) have none. Always check ahead if you need specific gear or facilities.</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Best Times to Visit</h4>
+                    <p>For gentler wave conditions and families, beaches such as San Francisco or La Posada are ideal year-round. For wind-surfing/kite near Algodones, pick up the windier months (November-March).</p>
+                </div>
+
+                <div class="tip-card">
+                    <h4>Staying Near the Beaches</h4>
+                    <p>If you're staying near a condo/resort, the semi-private access beaches (like Marinaterra, La Posada) are convenient for children or shorter stays with easy walking access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Buttons placeholder -->
+    <div id="floating-buttons-placeholder"></div>
+
+    <!-- Load floating contact buttons -->
+    <script>
+        fetch('/floating-contact-buttons-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('floating-buttons-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading floating buttons:', error));
+    </script>
+
+    <script>
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
+    </script>
+
+    <!-- Load navbar functionality -->
+    <script src="/navbar-scripts.js"></script>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>

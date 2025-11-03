@@ -42,6 +42,7 @@ function initLanguageSwitcher() {
     // Map of English to Spanish paths
     const pathMap = {
         '/en/': '/es/',
+        '/en/beaches/': '/es/playas/',
         '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
         '/en/properties/': '/es/propiedades/',
         '/en/properties/casa-allea/': '/es/propiedades/casa-allea/',
@@ -49,6 +50,7 @@ function initLanguageSwitcher() {
         '/en/properties/unit-b-oceanview-condo/': '/es/propiedades/unidad-b-condominio-vista-al-mar/',
         '/en/properties/tranquil-solimar-escape/': '/es/propiedades/tranquil-solimar-escape/',
         '/es/': '/en/',
+        '/es/playas/': '/en/beaches/',
         '/es/lugares-para-hospedarse/': '/en/places-to-stay/',
         '/es/propiedades/': '/en/properties/',
         '/es/propiedades/casa-allea/': '/en/properties/casa-allea/',
