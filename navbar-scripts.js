@@ -46,12 +46,14 @@ function initLanguageSwitcher() {
         '/en/properties/': '/es/propiedades/',
         '/en/properties/casa-allea/': '/es/propiedades/casa-allea/',
         '/en/properties/san-carlos-condo/': '/es/propiedades/condominio-san-carlos/',
+        '/en/properties/unit-b-oceanview-condo/': '/es/propiedades/unidad-b-condominio-vista-al-mar/',
         '/en/properties/tranquil-solimar-escape/': '/es/propiedades/tranquil-solimar-escape/',
         '/es/': '/en/',
         '/es/lugares-para-hospedarse/': '/en/places-to-stay/',
         '/es/propiedades/': '/en/properties/',
         '/es/propiedades/casa-allea/': '/en/properties/casa-allea/',
         '/es/propiedades/condominio-san-carlos/': '/en/properties/san-carlos-condo/',
+        '/es/propiedades/unidad-b-condominio-vista-al-mar/': '/en/properties/unit-b-oceanview-condo/',
         '/es/propiedades/tranquil-solimar-escape/': '/en/properties/tranquil-solimar-escape/'
     };
 
