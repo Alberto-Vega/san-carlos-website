@@ -17,6 +17,9 @@
     <!-- Floating Contact Buttons CSS -->
     <link rel="stylesheet" href="/floating-contact-buttons.css">
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         * {
             margin: 0;
@@ -232,6 +235,30 @@
             padding-left: 0;
         }
 
+        /* Directions Button */
+        .directions-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+        }
+
+        .directions-btn:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+        }
+
+        .directions-btn i {
+            margin-right: 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .beach-content {
@@ -302,13 +329,15 @@
             <div class="beach-header">
                 <h3>1. Playa Los Algodones</h3>
                 <p class="beach-coordinates">Approx. near San Carlos, Sonora; entry point along Blvd. "Choya" after Carretera 124</p>
+                <a href="https://maps.google.com/?q=27.9285,-111.1189" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
             </div>
 
             <div class="beach-images">
                 <img src="https://beaches-searcher.com/images/beaches/484201418/MX201418.jpg" alt="Playa Los Algodones San Carlos Sonora white sand dunes" class="beach-image">
                 <img src="https://backpackandsnorkel.com/images2/San-Carlos-Playa-Los-Algodones6_50.webp" alt="Snorkeling at Playa Los Algodones" class="beach-image">
                 <img src="https://mediaim.expedia.com/destination/2/22beaf7ca86c8ddd533742d1086de0ff.jpg" alt="Los Algodones beach panoramic view" class="beach-image">
-                <img src="https://lh5.googleusercontent.com/p/AF1QipNEz-xGvhq5H9_JjUqG5yKN8TvV8mW0XYE0qBhf=s1600" alt="Los Algodones San Carlos Sonora beach view" class="beach-image">
             </div>
 
             <div class="beach-content">
@@ -340,6 +369,9 @@
             <div class="beach-header">
                 <h3>2. Playa San Francisco (Pilar Beach area)</h3>
                 <p class="beach-coordinates">Coordinates: ~27.9634° N, –111.0183° W</p>
+                <a href="https://maps.google.com/?q=27.9634,-111.0183" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
             </div>
 
             <div class="beach-images">
@@ -380,6 +412,9 @@
             <div class="beach-header">
                 <h3>3. Playa Piedras Pintas</h3>
                 <p class="beach-coordinates">Coordinates: ~27.94112° N, –111.09041° W</p>
+                <a href="https://maps.google.com/?q=27.94112,-111.09041" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
             </div>
 
             <div class="beach-images">
@@ -420,6 +455,9 @@
             <div class="beach-header">
                 <h3>4. Playa La Posada (Posada Beach)</h3>
                 <p class="beach-coordinates">Located near La Posada Condos, San Carlos</p>
+                <a href="https://maps.google.com/?q=27.9583,-111.0493" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
             </div>
 
             <div class="beach-images">
@@ -460,6 +498,9 @@
             <div class="beach-header">
                 <h3>5. Playa Marinaterra / Beach Club Area</h3>
                 <p class="beach-coordinates">Located at Marinaterra Resort Zone, San Carlos</p>
+                <a href="https://maps.google.com/?q=27.9572,-111.0361" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
             </div>
 
             <div class="beach-images">
@@ -491,6 +532,88 @@
 
                     <h4>Semi-Private Aspect</h4>
                     <p>Walking access from resort zone. The beach club atmosphere provides a more organized beach experience with available equipment rentals and services.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 6: Playa Incluyente -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>6. Playa Incluyente</h3>
+                <p class="beach-coordinates">Coordinates: ~27.96292° N, –111.02436° W</p>
+                <a href="https://maps.google.com/?q=27.96292,-111.02436" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNDQ3NzgxODkvNjMzMmQyZThkZWEyYTIxNDNiYzMxMGIzNzZiODRhMDQuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJqcGVnIiwicmVzaXplIjp7IndpZHRoIjo1MDAsImhlaWdodCI6NTAwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0=" alt="Playa Incluyente San Carlos beach access" class="beach-image">
+                <img src="https://cdn-assets.alltrails.com/static-map/production/poi/2665984/point_of_interests/mexico-sonora-guaymas-playa-incluyente-2665984-20250208192551163206-1200x630-3-41739140314.jpg" alt="Playa Incluyente San Carlos Sonora" class="beach-image">
+                <img src="https://www.sandiegouniontribune.com/wp-content/uploads/migration/2023/06/22/00000185-a83a-dcff-a5c7-fb7a471a0000.jpg?resize=1600%2C900&w=1600" alt="Playa Incluyente accessible beach" class="beach-image">
+                <img src="https://backpackandsnorkel.com/images2/San-Carlos-Playa-Incluyente4_50.webp" alt="Playa Incluyente stairs access San Carlos" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>The beach runs along Route 124, east and west of "Charly's Rock" restaurant bar. There are concrete staircases down from the street level. Look for the steps off Route 124.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Good option for something less "resort-front" but still accessible</li>
+                        <li>Palapas and vendors present</li>
+                        <li>Decent amenities for a beach that's not fully secluded</li>
+                        <li>Popular with both locals and tourists</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Public beach with easy walking access from road/stairs. Parking available along Route 124.</p>
+
+                    <h4>Beach Character</h4>
+                    <p>A fairly busy beach with a local feel, offering a nice balance between accessibility and authentic Mexican beach atmosphere. The concrete stairs make it easy to access from the main road.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 7: Cotton Cove -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>7. Cotton Cove (Caracol Peninsula)</h3>
+                <p class="beach-coordinates">Located in Caracol Peninsula neighbourhood near the marina</p>
+                <a href="https://maps.google.com/?q=27.9598,-111.0351" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Get Directions
+                </a>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://whatsupsancarlos.com/wp-content/uploads/caracol-by-Fernando-Salcido.jpg" alt="Cotton Cove Caracol Peninsula San Carlos" class="beach-image">
+                <img src="https://changing-lanes.blog/wp-content/uploads/2019/07/fullsizerender.jpg?w=640" alt="Cotton Cove beach San Carlos" class="beach-image">
+                <img src="https://i.ytimg.com/vi/Aepz8bKwW-g/maxresdefault.jpg" alt="Cotton Cove swimming area San Carlos" class="beach-image">
+                <img src="https://whatsupsancarlos.com/wp-content/uploads/2013/09/Tetakawi-from-the-Caracol.jpg" alt="View of Tetakawi from Cotton Cove" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>How to Get There</h4>
+                    <p>Walking access from the Caracol Peninsula neighbourhood near the marina. This palm-lined beach is accessible on foot from the local area.</p>
+
+                    <h4>Why Visit</h4>
+                    <ul>
+                        <li>Great for swimming with calm waters</li>
+                        <li>Excellent snorkeling opportunities</li>
+                        <li>Perfect for kayaking and paddle-boarding</li>
+                        <li>Beautiful palm-lined setting</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Access Notes</h4>
+                    <p>Walking access from Caracol neighbourhood. Good for visitors staying nearby or those willing to head slightly off the main boulevard.</p>
+
+                    <h4>Semi-Private Character</h4>
+                    <p>This beach has a more "neighbourhood feel" and is typically quieter than the main hotel beaches. It fits the "semi-private but walking access" category perfectly, offering a peaceful beach experience without being fully commercial.</p>
                 </div>
             </div>
         </div>

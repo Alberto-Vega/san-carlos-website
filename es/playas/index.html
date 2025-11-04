@@ -17,6 +17,9 @@
     <!-- Floating Contact Buttons CSS -->
     <link rel="stylesheet" href="/floating-contact-buttons.css">
 
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         * {
             margin: 0;
@@ -232,6 +235,30 @@
             padding-left: 0;
         }
 
+        /* Directions Button */
+        .directions-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+        }
+
+        .directions-btn:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+        }
+
+        .directions-btn i {
+            margin-right: 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .beach-content {
@@ -302,13 +329,15 @@
             <div class="beach-header">
                 <h3>1. Playa Los Algodones</h3>
                 <p class="beach-coordinates">Aprox. cerca de San Carlos, Sonora; punto de entrada en Blvd. "Choya" después de Carretera 124</p>
+                <a href="https://maps.google.com/?q=27.9285,-111.1189" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
             </div>
 
             <div class="beach-images">
                 <img src="https://beaches-searcher.com/images/beaches/484201418/MX201418.jpg" alt="Playa Los Algodones San Carlos Sonora dunas de arena blanca" class="beach-image">
                 <img src="https://backpackandsnorkel.com/images2/San-Carlos-Playa-Los-Algodones6_50.webp" alt="Snorkel en Playa Los Algodones" class="beach-image">
                 <img src="https://mediaim.expedia.com/destination/2/22beaf7ca86c8ddd533742d1086de0ff.jpg" alt="Vista panorámica de Playa Los Algodones" class="beach-image">
-                <img src="https://lh5.googleusercontent.com/p/AF1QipNEz-xGvhq5H9_JjUqG5yKN8TvV8mW0XYE0qBhf=s1600" alt="Vista de playa Los Algodones San Carlos Sonora" class="beach-image">
             </div>
 
             <div class="beach-content">
@@ -340,6 +369,9 @@
             <div class="beach-header">
                 <h3>2. Playa San Francisco (área de Playa Pilar)</h3>
                 <p class="beach-coordinates">Coordenadas: ~27.9634° N, –111.0183° O</p>
+                <a href="https://maps.google.com/?q=27.9634,-111.0183" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
             </div>
 
             <div class="beach-images">
@@ -380,6 +412,9 @@
             <div class="beach-header">
                 <h3>3. Playa Piedras Pintas</h3>
                 <p class="beach-coordinates">Coordenadas: ~27.94112° N, –111.09041° O</p>
+                <a href="https://maps.google.com/?q=27.94112,-111.09041" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
             </div>
 
             <div class="beach-images">
@@ -420,6 +455,9 @@
             <div class="beach-header">
                 <h3>4. Playa La Posada (Playa Posada)</h3>
                 <p class="beach-coordinates">Ubicada cerca de Condominios La Posada, San Carlos</p>
+                <a href="https://maps.google.com/?q=27.9583,-111.0493" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
             </div>
 
             <div class="beach-images">
@@ -460,6 +498,9 @@
             <div class="beach-header">
                 <h3>5. Playa Marinaterra / Área del Club de Playa</h3>
                 <p class="beach-coordinates">Ubicada en la Zona Resort de Marinaterra, San Carlos</p>
+                <a href="https://maps.google.com/?q=27.9572,-111.0361" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
             </div>
 
             <div class="beach-images">
@@ -491,6 +532,88 @@
 
                     <h4>Aspecto Semi-Privado</h4>
                     <p>Acceso a pie desde la zona de resorts. La atmósfera del club de playa proporciona una experiencia de playa más organizada con alquiler de equipos y servicios disponibles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 6: Playa Incluyente -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>6. Playa Incluyente</h3>
+                <p class="beach-coordinates">Coordenadas: ~27.96292° N, –111.02436° O</p>
+                <a href="https://maps.google.com/?q=27.96292,-111.02436" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvNDQ3NzgxODkvNjMzMmQyZThkZWEyYTIxNDNiYzMxMGIzNzZiODRhMDQuanBnIiwiZWRpdHMiOnsidG9Gb3JtYXQiOiJqcGVnIiwicmVzaXplIjp7IndpZHRoIjo1MDAsImhlaWdodCI6NTAwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJqcGVnIjp7InRyZWxsaXNRdWFudGlzYXRpb24iOnRydWUsIm92ZXJzaG9vdERlcmluZ2luZyI6dHJ1ZSwib3B0aW1pc2VTY2FucyI6dHJ1ZSwicXVhbnRpc2F0aW9uVGFibGUiOjN9fX0=" alt="Playa Incluyente San Carlos acceso a playa" class="beach-image">
+                <img src="https://cdn-assets.alltrails.com/static-map/production/poi/2665984/point_of_interests/mexico-sonora-guaymas-playa-incluyente-2665984-20250208192551163206-1200x630-3-41739140314.jpg" alt="Playa Incluyente San Carlos Sonora" class="beach-image">
+                <img src="https://www.sandiegouniontribune.com/wp-content/uploads/migration/2023/06/22/00000185-a83a-dcff-a5c7-fb7a471a0000.jpg?resize=1600%2C900&w=1600" alt="Playa Incluyente playa accesible" class="beach-image">
+                <img src="https://backpackandsnorkel.com/images2/San-Carlos-Playa-Incluyente4_50.webp" alt="Playa Incluyente escaleras acceso San Carlos" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>Cómo Llegar</h4>
+                    <p>La playa se extiende a lo largo de la Ruta 124, al este y oeste del bar restaurante "Charly's Rock". Hay escaleras de concreto que bajan desde el nivel de la calle. Busca los escalones junto a la Ruta 124.</p>
+
+                    <h4>Por Qué Visitar</h4>
+                    <ul>
+                        <li>Buena opción para algo menos "frente a resort" pero aún accesible</li>
+                        <li>Palapas y vendedores presentes</li>
+                        <li>Amenidades decentes para una playa que no está completamente aislada</li>
+                        <li>Popular entre locales y turistas</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Notas de Acceso</h4>
+                    <p>Playa pública con fácil acceso a pie desde la carretera/escaleras. Estacionamiento disponible a lo largo de la Ruta 124.</p>
+
+                    <h4>Carácter de la Playa</h4>
+                    <p>Una playa bastante concurrida con un ambiente local, que ofrece un buen equilibrio entre accesibilidad y auténtica atmósfera de playa mexicana. Las escaleras de concreto facilitan el acceso desde la carretera principal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beach 7: Cotton Cove -->
+        <div class="beach-section">
+            <div class="beach-header">
+                <h3>7. Cotton Cove (Península Caracol)</h3>
+                <p class="beach-coordinates">Ubicada en el vecindario de la Península Caracol cerca de la marina</p>
+                <a href="https://maps.google.com/?q=27.9598,-111.0351" target="_blank" class="directions-btn">
+                    <i class="fa fa-map-marker"></i>Obtener Direcciones
+                </a>
+            </div>
+
+            <div class="beach-images">
+                <img src="https://whatsupsancarlos.com/wp-content/uploads/caracol-by-Fernando-Salcido.jpg" alt="Cotton Cove Península Caracol San Carlos" class="beach-image">
+                <img src="https://changing-lanes.blog/wp-content/uploads/2019/07/fullsizerender.jpg?w=640" alt="Cotton Cove playa San Carlos" class="beach-image">
+                <img src="https://i.ytimg.com/vi/Aepz8bKwW-g/maxresdefault.jpg" alt="Cotton Cove área de nado San Carlos" class="beach-image">
+                <img src="https://whatsupsancarlos.com/wp-content/uploads/2013/09/Tetakawi-from-the-Caracol.jpg" alt="Vista de Tetakawi desde Cotton Cove" class="beach-image">
+            </div>
+
+            <div class="beach-content">
+                <div class="beach-info">
+                    <h4>Cómo Llegar</h4>
+                    <p>Acceso a pie desde el vecindario de la Península Caracol cerca de la marina. Esta playa bordeada de palmeras es accesible a pie desde el área local.</p>
+
+                    <h4>Por Qué Visitar</h4>
+                    <ul>
+                        <li>Excelente para nadar con aguas calmadas</li>
+                        <li>Excelentes oportunidades para snorkel</li>
+                        <li>Perfecta para kayak y paddle-boarding</li>
+                        <li>Hermoso entorno bordeado de palmeras</li>
+                    </ul>
+                </div>
+
+                <div class="beach-info">
+                    <h4>Notas de Acceso</h4>
+                    <p>Acceso a pie desde el vecindario Caracol. Buena para visitantes que se alojan cerca o aquellos dispuestos a dirigirse ligeramente fuera del boulevard principal.</p>
+
+                    <h4>Carácter Semi-Privado</h4>
+                    <p>Esta playa tiene más de una "sensación de vecindario" y típicamente es más tranquila que las playas hoteleras principales. Se ajusta perfectamente a la categoría de "semi-privado pero con acceso a pie", ofreciendo una experiencia de playa tranquila sin ser completamente comercial.</p>
                 </div>
             </div>
         </div>
