@@ -194,12 +194,24 @@ nav.scrolled .nav-links a {
     min-width: 180px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     border-radius: 8px;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    padding-top: 0.5rem;
     overflow: hidden;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Fill gap between parent and dropdown to maintain hover */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background: transparent;
 }
 
 .dropdown-content a {
