@@ -43,6 +43,7 @@ function initLanguageSwitcher() {
     const pathMap = {
         '/en/': '/es/',
         '/en/beaches/': '/es/playas/',
+        '/en/beachfront-experiences/': '/es/experiencias-en-la-playa/',
         '/en/places-to-stay/': '/es/lugares-para-hospedarse/',
         '/en/properties/': '/es/propiedades/',
         '/en/properties/casa-allea/': '/es/propiedades/casa-allea/',
@@ -51,6 +52,7 @@ function initLanguageSwitcher() {
         '/en/properties/tranquil-solimar-escape/': '/es/propiedades/tranquil-solimar-escape/',
         '/es/': '/en/',
         '/es/playas/': '/en/beaches/',
+        '/es/experiencias-en-la-playa/': '/en/beachfront-experiences/',
         '/es/lugares-para-hospedarse/': '/en/places-to-stay/',
         '/es/propiedades/': '/en/properties/',
         '/es/propiedades/casa-allea/': '/en/properties/casa-allea/',

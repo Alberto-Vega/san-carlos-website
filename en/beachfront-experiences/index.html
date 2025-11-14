@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beachfront Dining & Beach Clubs in San Carlos Sonora | Pools, Restaurants & Bars</title>
+    <meta name="description" content="Discover the best beachfront experiences in San Carlos Sonora. Beach clubs with pools, swim-up bars, beachfront restaurants, and sunset dining with your feet in the sand.">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/beachfront-experiences/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/experiencias-en-la-playa/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "San Carlos Beachfront Dining & Beach Clubs",
+      "description": "Beach clubs with swimming pools, beachfront restaurants, and sunset bars in San Carlos Sonora Mexico",
+      "url": "https://sancarlos-sonora.com/en/beachfront-experiences/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Carlos",
+        "addressRegion": "Sonora",
+        "addressCountry": "MX"
+      }
+    }
+    </script>
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background-image: url('../../solimar-pool.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 5rem 5%;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 3rem 5%;
+            background: #f8f9fa;
+        }
+
+        .filter-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .filter-content h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border: 2px solid #d97706;
+            border-radius: 50px;
+            color: #d97706;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-btn:hover {
+            background: #d97706;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        .filter-btn.active {
+            background: #d97706;
+            color: white;
+        }
+
+        .filter-btn .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Venues Section */
+        .venues-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .venues-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .venue-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .venue-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .venue-card.hidden {
+            display: none;
+        }
+
+        .venue-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .venue-content {
+            padding: 2rem;
+        }
+
+        .venue-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .venue-tag {
+            padding: 0.3rem 0.8rem;
+            background: #fef3c7;
+            color: #92400e;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .venue-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-location {
+            color: #d97706;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .venue-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .venue-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .venue-features li {
+            padding: 0.4rem 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .venue-features li:before {
+            content: "✓";
+            color: #d97706;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .family-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #d97706;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .venues-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Beachfront Experiences in San Carlos</h1>
+            <p>Beach clubs with pools, sunset dining, and drinks with your feet in the sand</p>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2>Discover San Carlos Beachfront Dining & Beach Clubs</h2>
+        <p>
+            From exclusive beach clubs with swimming pools and swim-up bars to casual beachfront restaurants where you can dine with your feet in the sand, San Carlos offers unforgettable beachfront experiences for every taste.
+        </p>
+        <p>
+            Whether you're looking for a family-friendly beach club with water features for kids, a romantic sunset dinner, or a lively beach bar with live music, you'll find the perfect spot along our stunning Sea of Cortez coastline.
+        </p>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-content">
+            <h3>Find Your Perfect Beachfront Experience</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn" data-filter="all">Show All</button>
+                <button class="filter-btn" data-filter="pool"><span class="icon">🏊</span> Swimming Pools</button>
+                <button class="filter-btn" data-filter="kids"><span class="icon">👶</span> Kids Features</button>
+                <button class="filter-btn" data-filter="restaurant"><span class="icon">🍽️</span> Full Restaurant</button>
+                <button class="filter-btn" data-filter="bar"><span class="icon">🍹</span> Beach Bars</button>
+                <button class="filter-btn" data-filter="sunset"><span class="icon">🌅</span> Sunset Views</button>
+                <button class="filter-btn" data-filter="sand"><span class="icon">🏖️</span> Feet-in-Sand</button>
+                <button class="filter-btn" data-filter="music"><span class="icon">🎵</span> Live Music</button>
+                <button class="filter-btn" data-filter="watersports"><span class="icon">💦</span> Water Sports</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="venues-section">
+        <div class="venues-content">
+            <div class="venues-grid" id="venuesGrid">
+
+                <!-- Venue 1: Marinaterra Beach Club -->
+                <div class="venue-card" data-tags="pool,restaurant,watersports,kids">
+                    <img src="../../solimar-pool.jpeg" alt="Marinaterra Beach Club pool and beach" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Pool</span>
+                            <span class="venue-tag">Restaurant</span>
+                            <span class="venue-tag">Water Sports</span>
+                        </div>
+                        <h3>Marinaterra Beach Club</h3>
+                        <p class="venue-location">Next to San Carlos Marina</p>
+                        <p class="venue-description">
+                            Exclusive beach club with ideal facilities for resting and having fun at a quiet, clear-water beach. Perfect for families and those seeking a full-service beach club experience.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Swimming pool & wading pool for kids</li>
+                            <li>Swim-up bar with beach access</li>
+                            <li>Snack-bar restaurant (Tue-Sun seasonal)</li>
+                            <li>Water sports rentals: kayak, paddleboard, snorkel</li>
+                            <li>Beach volleyball, palapas, lounge chairs</li>
+                            <li>Free shuttle from hotel (2 min ride)</li>
+                        </ul>
+                        <div class="family-badge">👶 Family-Friendly • Wading Pool • Shade Available</div>
+                    </div>
+                </div>
+
+                <!-- Venue 2: San Carlos Plaza Hotel Water Park -->
+                <div class="venue-card" data-tags="pool,kids">
+                    <img src="../../casa_allea.jpg" alt="San Carlos Plaza Hotel water features" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Kids Pool</span>
+                            <span class="venue-tag">Water Park</span>
+                        </div>
+                        <h3>San Carlos Plaza Hotel Water Park</h3>
+                        <p class="venue-location">Playa Los Algodones</p>
+                        <p class="venue-description">
+                            The premier family destination in San Carlos! Features an extensive family-friendly water park area complete with multiple pools, water slides, and even a pirate ship for kids.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Kids pool with pirate ship & slides</li>
+                            <li>Multiple pools and water features</li>
+                            <li>Family water park area</li>
+                            <li>Direct access to Playa Los Algodones (1 min walk)</li>
+                            <li>Carousel in lobby for younger children</li>
+                            <li>On-site restaurant and bar</li>
+                        </ul>
+                        <div class="family-badge">👶 Perfect for Families • Best for Ages 3-12 • Lifeguards on Duty</div>
+                    </div>
+                </div>
+
+                <!-- Venue 3: Maukaa Restaurant Beach Club -->
+                <div class="venue-card" data-tags="pool,restaurant,sand">
+                    <img src="../../casa-allea-unit-a-patio-1.jpg" alt="Maukaa Beach Club on San Francisco beach" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Plunge Pool</span>
+                            <span class="venue-tag">Restaurant</span>
+                            <span class="venue-tag">Beach Access</span>
+                        </div>
+                        <h3>Maukaa Restaurant Beach Club</h3>
+                        <p class="venue-location">San Francisco Beach</p>
+                        <p class="venue-description">
+                            One of the few restaurants located right on San Francisco beach. Features a refreshing plunge pool and a huge palapa with swing chairs for the ultimate laid-back beach vibe.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Plunge pool for cooling off</li>
+                            <li>Huge palapa with swing chairs</li>
+                            <li>Direct beach access on San Francisco beach</li>
+                            <li>Full restaurant service</li>
+                            <li>Relaxed, bohemian atmosphere</li>
+                        </ul>
+                        <div class="family-badge">👶 Great for All Ages • Shallow Pool • Covered Seating</div>
+                    </div>
+                </div>
+
+                <!-- Venue 4: Soggy Peso Bar -->
+                <div class="venue-card" data-tags="bar,sand,music">
+                    <img src="../../solimar-pool.jpeg" alt="Soggy Peso beach bar" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Beach Bar</span>
+                            <span class="venue-tag">Live Music</span>
+                            <span class="venue-tag">Iconic Venue</span>
+                        </div>
+                        <h3>Soggy Peso Bar</h3>
+                        <p class="venue-location">Playa Los Algodones • <em>Reopening March 2025</em></p>
+                        <p class="venue-description">
+                            The original beach bar in San Carlos! This beachside thatch-roofed hangout has the ultimate "toes in the sand" vibe with famous margaritas, snack menu, and colorful beach atmosphere.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Famous margaritas & signature grilled wings</li>
+                            <li>Hammocks & lounge chairs on the beach</li>
+                            <li>Beach volleyball, horseshoe pit, bocce ball</li>
+                            <li>Live music near sunset</li>
+                            <li>Dog-friendly venue</li>
+                            <li>Covered & open-air seating for up to 170</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 5: Prana Restaurant & Bar -->
+                <div class="venue-card" data-tags="restaurant,bar,sunset,sand">
+                    <img src="../../casa-allea-unit-a-patio-1.jpg" alt="Prana Restaurant on Algodones beach" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Restaurant</span>
+                            <span class="venue-tag">Bar</span>
+                            <span class="venue-tag">New Venue</span>
+                        </div>
+                        <h3>Prana Restaurant & Bar</h3>
+                        <p class="venue-location">Playa Los Algodones</p>
+                        <p class="venue-description">
+                            The newest restaurant & bar on the nicest beach in San Carlos! Located on the soft white sands of Playa Algodones with great music, exquisite gastronomy, and beautiful natural surroundings.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Exquisite gastronomy with fresh ingredients</li>
+                            <li>Great music and ambiance</li>
+                            <li>Direct access to Algodones white sand beach</li>
+                            <li>Full bar service</li>
+                            <li>Beautiful sunset views</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 6: Sunset Bar & Grill -->
+                <div class="venue-card" data-tags="restaurant,sand,sunset">
+                    <img src="../../casa_allea.jpg" alt="Sunset Bar & Grill beachfront dining" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Restaurant</span>
+                            <span class="venue-tag">Sunset Views</span>
+                            <span class="venue-tag">Beach Dining</span>
+                        </div>
+                        <h3>Sunset Bar & Grill</h3>
+                        <p class="venue-location">Playa Los Algodones</p>
+                        <p class="venue-description">
+                            Casual dining with flair, literally with your feet in the sand! Located on the beautiful soft white sands of Algodones beach with spectacular sunset views.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Feet-in-the-sand dining experience</li>
+                            <li>Casual atmosphere with quality food</li>
+                            <li>Full bar and grill menu</li>
+                            <li>Prime sunset viewing location</li>
+                            <li>Soft white sand beach setting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 7: La Palapa Griega -->
+                <div class="venue-card" data-tags="restaurant,music,sunset">
+                    <img src="../../solimar-pool.jpeg" alt="La Palapa Griega on Posada Beach" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Greek Food</span>
+                            <span class="venue-tag">Live Music</span>
+                            <span class="venue-tag">Beach Loungers</span>
+                        </div>
+                        <h3>La Palapa Griega</h3>
+                        <p class="venue-location">Posada Beach</p>
+                        <p class="venue-description">
+                            Delicious Greek food, fresh seafood, cold drinks, and live music in an open-air palapa or on lounge chairs right on the beach. Open 7 days a week for lunch and dinner.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Authentic Greek cuisine & fresh seafood</li>
+                            <li>Live music performances</li>
+                            <li>Beach lounger seating available</li>
+                            <li>Open-air palapa covered dining</li>
+                            <li>Open daily for lunch & dinner</li>
+                            <li>Cold drinks and cocktails</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 8: El Mar Restaurant -->
+                <div class="venue-card" data-tags="restaurant">
+                    <img src="../../casa-allea-unit-a-patio-1.jpg" alt="El Mar beachfront restaurant" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Full Restaurant</span>
+                            <span class="venue-tag">Air Conditioned</span>
+                            <span class="venue-tag">Beachfront</span>
+                        </div>
+                        <h3>El Mar Restaurant</h3>
+                        <p class="venue-location">Beachfront Location</p>
+                        <p class="venue-description">
+                            Air-conditioned beachfront dining with beautiful ocean views. Serving breakfast, lunch, and dinner daily (closed Mondays). Perfect for those seeking comfortable dining with beachfront ambiance.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Air-conditioned comfort with beach views</li>
+                            <li>Breakfast, lunch & dinner service</li>
+                            <li>Open 7am-9pm (closed Mondays)</li>
+                            <li>Direct beachfront location</li>
+                            <li>Full menu options</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 9: HammerHead's Dockside -->
+                <div class="venue-card" data-tags="restaurant,bar,sunset">
+                    <img src="../../casa_allea.jpg" alt="HammerHead's at San Carlos Marina" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Marina</span>
+                            <span class="venue-tag">Bar & Grill</span>
+                            <span class="venue-tag">Sunset Views</span>
+                        </div>
+                        <h3>HammerHead's Dockside Bar & Grille</h3>
+                        <p class="venue-location">San Carlos Marina</p>
+                        <p class="venue-description">
+                            Located at the San Carlos Marina, your best choice for great meals, cold drinks, and fantastic atmosphere. Watch the sun set behind Tetakawi mountain and boats come and go.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Marina waterfront location</li>
+                            <li>Tetakawi mountain sunset views</li>
+                            <li>Watch boats and yachts</li>
+                            <li>Full bar and grille menu</li>
+                            <li>Great for boaters and visitors</li>
+                            <li>Relaxed marina atmosphere</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Venue 10: ALTAMAREA -->
+                <div class="venue-card" data-tags="restaurant,sunset">
+                    <img src="../../solimar-pool.jpeg" alt="ALTAMAREA restaurant Marina Real" class="venue-image">
+                    <div class="venue-content">
+                        <div class="venue-tags">
+                            <span class="venue-tag">Fine Dining</span>
+                            <span class="venue-tag">Sunset Views</span>
+                            <span class="venue-tag">Marina</span>
+                        </div>
+                        <h3>ALTAMAREA</h3>
+                        <p class="venue-location">Marina Real</p>
+                        <p class="venue-description">
+                            Enjoy your afternoons in front of the sea with exceptional sunsets at Marina Real. Refined dining experience with spectacular ocean and sunset views.
+                        </p>
+                        <ul class="venue-features">
+                            <li>Exceptional sunset viewing</li>
+                            <li>Marina Real waterfront</li>
+                            <li>Refined dining atmosphere</li>
+                            <li>Sea views from every table</li>
+                            <li>Perfect for special occasions</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Experience San Carlos Beachfront Dining?</h2>
+        <p>From swim-up bars to sunset dinners, discover the perfect beachfront experience for your Sea of Cortez getaway.</p>
+        <a href="/en/places-to-stay/" class="cta-button">Find Your Perfect Stay</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 San Carlos Sonora Tourism. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const venueCards = document.querySelectorAll('.venue-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter cards
+                venueCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const tags = card.dataset.tags.split(',');
+                        if (tags.includes(filter)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
+    </script>
+
+    <!-- Load navbar functionality -->
+    <script src="/navbar-scripts.js"></script>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>
