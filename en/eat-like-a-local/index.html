@@ -133,7 +133,38 @@
             border-left: 4px solid #d97706;
         }
 
+        /* Restaurant Card with Image */
+        .restaurant-card-with-image {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 0;
+            border-left: 4px solid #d97706;
+        }
+
+        .restaurant-card-with-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .restaurant-card-content {
+            padding: 2rem;
+        }
+
         .restaurant-card h4 {
+            font-size: 1.5rem;
+            color: #d97706;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-card-content h4 {
             font-size: 1.5rem;
             color: #d97706;
             margin-top: 0;
@@ -157,6 +188,21 @@
 
         .restaurant-card ul li {
             margin: 0.5rem 0;
+        }
+
+        .restaurant-card-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .restaurant-card-content ul li {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .restaurant-card-with-image {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Info Box */
@@ -350,23 +396,26 @@
 
         <h2>Best Local Places to Eat in San Carlos</h2>
 
-        <div class="restaurant-card">
-            <h4>1. Restaurante Doña Rosita (La Manga)</h4>
-            <div class="restaurant-meta">
-                <strong>Best for:</strong> True fishermen's-village experience<br>
-                <strong>Vibe:</strong> Rustic, palapa seating, right by the water
+        <div class="restaurant-card-with-image">
+            <img src="../../dona-rosita.jpg" alt="Restaurante Doña Rosita in La Manga, San Carlos">
+            <div class="restaurant-card-content">
+                <h4>1. Restaurante Doña Rosita (La Manga)</h4>
+                <div class="restaurant-meta">
+                    <strong>Best for:</strong> True fishermen's-village experience<br>
+                    <strong>Vibe:</strong> Rustic, palapa seating, right by the water
+                </div>
+                <p><strong>Why locals love it:</strong> It feels untouched by tourism; everything is based on the daily catch in La Manga, one of the last traditional fishing villages near San Carlos.</p>
+
+                <p style="margin-top: 1rem;"><strong>What to order:</strong></p>
+                <ul>
+                    <li>Whole fried fish</li>
+                    <li>Garlic shrimp</li>
+                    <li>Almeja reina (large clams)</li>
+                    <li>Seafood soup (a local favorite)</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>💡 Local tip:</strong> Go early afternoon — dishes often run out based on demand.</p>
             </div>
-            <p><strong>Why locals love it:</strong> It feels untouched by tourism; everything is based on the daily catch in La Manga, one of the last traditional fishing villages near San Carlos.</p>
-
-            <p style="margin-top: 1rem;"><strong>What to order:</strong></p>
-            <ul>
-                <li>Whole fried fish</li>
-                <li>Garlic shrimp</li>
-                <li>Almeja reina (large clams)</li>
-                <li>Seafood soup (a local favorite)</li>
-            </ul>
-
-            <p style="margin-top: 1rem;"><strong>💡 Local tip:</strong> Go early afternoon — dishes often run out based on demand.</p>
         </div>
 
         <div class="restaurant-card">
