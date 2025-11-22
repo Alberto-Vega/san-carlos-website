@@ -245,6 +245,29 @@
             background: #fff7ed;
         }
 
+        /* Directions Button */
+        .directions-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #d97706;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+        }
+
+        .directions-btn:hover {
+            background: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+        }
+
+        .directions-btn i {
+            margin-right: 0.5rem;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
@@ -471,6 +494,7 @@
                     <th>Location</th>
                     <th>Activity</th>
                     <th>Coordinates</th>
+                    <th>Map</th>
                 </tr>
             </thead>
             <tbody>
@@ -478,21 +502,41 @@
                     <td><strong>Cerro Tetakawi (summit area)</strong></td>
                     <td>Hiking, photography</td>
                     <td>27.964° N, –111.040° W</td>
+                    <td>
+                        <a href="https://www.google.com/maps/search/?api=1&query=27.964,-111.040" target="_blank" class="directions-btn" rel="noopener noreferrer">
+                            <i class="fa fa-map-marker"></i>Open Map
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td><strong>Nacapule Canyon Entrance</strong></td>
                     <td>Hiking, nature</td>
                     <td>28.014° N, –111.035° W</td>
+                    <td>
+                        <a href="https://www.google.com/maps/search/?api=1&query=28.014,-111.035" target="_blank" class="directions-btn" rel="noopener noreferrer">
+                            <i class="fa fa-map-marker"></i>Open Map
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td><strong>Mirador Scenic Overlook</strong></td>
                     <td>Photography, viewing Tetakawi</td>
                     <td>27.952° N, –111.045° W</td>
+                    <td>
+                        <a href="https://www.google.com/maps/search/?api=1&query=27.952,-111.045" target="_blank" class="directions-btn" rel="noopener noreferrer">
+                            <i class="fa fa-map-marker"></i>Open Map
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td><strong>Estero El Soldado (kayak access)</strong></td>
                     <td>Eco tours, kayaking</td>
                     <td>~27.966° N, –110.997° W</td>
+                    <td>
+                        <a href="https://www.google.com/maps/search/?api=1&query=27.966,-110.997" target="_blank" class="directions-btn" rel="noopener noreferrer">
+                            <i class="fa fa-map-marker"></i>Open Map
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
