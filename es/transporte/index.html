@@ -607,6 +607,22 @@
         <p>&copy; 2025 Guía Turística de San Carlos Sonora. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-es.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
     <!-- Navbar Script -->
     <script src="/navbar-scripts.js"></script>
 </body>
