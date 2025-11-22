@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things to Do in San Carlos Sonora | Activities, Adventures & Tours</title>
+    <meta name="description" content="Discover the best activities in San Carlos Sonora - snorkeling, diving, kayaking, hiking Tetakawi, ATV tours, sunset cruises, fishing charters, and wildlife watching.">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/activities/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/actividades/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Things to Do in San Carlos Sonora - Activities & Adventures",
+      "description": "Complete guide to activities, adventures, and tours in San Carlos Sonora Mexico - water sports, hiking, wildlife watching, and outdoor experiences",
+      "url": "https://sancarlos-sonora.com/en/activities/"
+    }
+    </script>
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: #d97706;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: #d97706;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Activity Cards */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #d97706;
+        }
+
+        .activity-card h4 {
+            font-size: 1.4rem;
+            color: #d97706;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .activity-card .icon {
+            font-size: 1.5rem;
+        }
+
+        .activity-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .activity-card ul li {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .activity-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        /* Provider Cards */
+        .provider-card {
+            background: #fff7ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #d97706;
+        }
+
+        .provider-card h5 {
+            color: #d97706;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .provider-card p {
+            margin: 0.5rem 0;
+        }
+
+        .provider-card a {
+            color: #d97706;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .provider-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: #fff7ed;
+            border-left: 4px solid #d97706;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .tip-box strong {
+            color: #d97706;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e0f2fe;
+            border-left: 4px solid #0284c7;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box strong {
+            color: #0284c7;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #d97706;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:hover {
+            background: #fff7ed;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #d97706;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .content-section h2 { font-size: 2rem; }
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Things to Do in San Carlos</h1>
+            <p>Adventure, nature & tours - world-class activities for families and outdoor enthusiasts</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <p class="intro-text">
+            San Carlos, Sonora offers <strong>world-class activities</strong> for families, adventure travelers, and nature lovers. Explore outdoor adventures, marine life experiences, tours, and active things to do—complementing the beautiful beaches and dining scene.
+        </p>
+
+        <h3>🌊 Water Activities & Marine Adventures</h3>
+
+        <div class="activity-grid">
+            <div class="activity-card">
+                <h4><i class="fas fa-mask-snorkel"></i> Snorkeling & Scuba Diving</h4>
+                <p>Explore coves, reefs, and rocky outcrops full of colorful fish.</p>
+                <ul>
+                    <li>Piedras Pintas</li>
+                    <li>Seal Island</li>
+                    <li>"The Aquarium"</li>
+                    <li>Guided marine tours available</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-water"></i> Kayaking & Paddleboarding</h4>
+                <p>Paddle calm waters with views of cliffs, desert landscapes, and wildlife.</p>
+                <ul>
+                    <li>Morning tours for still water</li>
+                    <li>Perfect for beginners</li>
+                    <li>Wildlife viewing opportunities</li>
+                    <li>Rental equipment available</li>
+                </ul>
+            </div>
+        </div>
+
+        <h4>Recommended Marine Tour Operators</h4>
+
+        <div class="provider-card">
+            <h5>Enrike's Adventures / San Carlos Adventures</h5>
+            <p><strong>Services:</strong> Kayaks • SUP • Snorkel Trips • ATVs</p>
+            <p><strong>Phone:</strong> <a href="tel:+526222260289">+52 622-226-0289</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/526221307338">+52 622-130-7338</a></p>
+            <p><strong>Address:</strong> Blvd Tetakawi, Plaza La Mar, Sector Crestón #6</p>
+        </div>
+
+        <div class="provider-card">
+            <h5>San Carlos Aquatic Adventures</h5>
+            <p><strong>Services:</strong> Diving • Snorkeling • Marine Tours</p>
+        </div>
+
+        <div class="provider-card">
+            <h5>Ocean Sports San Carlos</h5>
+            <p><strong>Services:</strong> Kayak & Paddleboard Rentals</p>
+        </div>
+
+        <h3>🚤 Boat Tours, Cruises & Fishing Charters</h3>
+
+        <div class="activity-grid">
+            <div class="activity-card">
+                <h4><i class="fas fa-sailboat"></i> Sunset Cruises & Sailing Trips</h4>
+                <p>See Tetakawi glowing at sunset from the water—one of the most iconic San Carlos experiences.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-fish"></i> Sport Fishing</h4>
+                <p>San Carlos is known for yellowtail, dorado, marlin, and sea bass. Charter boats operate year-round.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-dolphin"></i> Marine Wildlife Tours</h4>
+                <p>Guided tours may encounter dolphins, sea lions, rays, and—seasonally—whales.</p>
+            </div>
+        </div>
+
+        <div class="provider-card">
+            <h5>San Carlos Sailboat Cruises</h5>
+            <p><strong>Phone (MX):</strong> <a href="tel:+526221729068">+52 622-172-9068</a></p>
+            <p><strong>Phone (USA):</strong> <a href="tel:+13464597974">+1 346-459-7974</a></p>
+            <p><strong>Location:</strong> Marina San Carlos</p>
+        </div>
+
+        <h3>⛰ Land Adventures</h3>
+
+        <div class="activity-grid">
+            <div class="activity-card">
+                <h4><i class="fas fa-hiking"></i> Hike Cerro Tetakawi</h4>
+                <p>The most famous landmark in San Carlos. The hike is steep and rocky but offers unbeatable views.</p>
+                <ul>
+                    <li>Best time: sunrise or early morning</li>
+                    <li>Difficulty: moderate to challenging</li>
+                    <li>Bring water and sun protection</li>
+                    <li>Stunning 360° views from summit</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-mountain"></i> Nacapule Canyon</h4>
+                <p>A desert oasis with towering walls, freshwater pools (seasonal), and shaded trails.</p>
+                <ul>
+                    <li>Great for families</li>
+                    <li>Perfect for photographers</li>
+                    <li>Unique desert ecosystem</li>
+                    <li>Easy to moderate difficulty</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-truck-monster"></i> ATV & Side-by-Side Tours</h4>
+                <p>Ride through dunes, canyon trails, and scenic desert overlooks.</p>
+                <ul>
+                    <li>Guided desert tours</li>
+                    <li>Various difficulty levels</li>
+                    <li>Equipment provided</li>
+                    <li>Safety briefing included</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="provider-card">
+            <h5>SaltySun Rentals / Off the Edge</h5>
+            <p><strong>Services:</strong> ATVs • Side-by-Sides • Desert Guides</p>
+            <p><strong>Phone:</strong> <a href="tel:+526222260665">+52 622-226-0665</a></p>
+            <p><strong>Cell:</strong> <a href="tel:+526221035108">+52 622-103-5108</a></p>
+        </div>
+
+        <h3>🦅 Nature Experiences & Wildlife Watching</h3>
+
+        <div class="activity-grid">
+            <div class="activity-card">
+                <h4><i class="fas fa-leaf"></i> Estero El Soldado (Mangrove Estuary)</h4>
+                <p>A protected ecological reserve ideal for birdwatching, kayaking, and educational eco-tours.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-otter"></i> Sea Lions at Seal Island</h4>
+                <p>A short boat ride takes you to see colonies of sea lions in their natural habitat.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4><i class="fas fa-crow"></i> Birdwatching</h4>
+                <p>San Carlos hosts pelicans, herons, frigatebirds, ospreys, and many migratory species.</p>
+                <ul>
+                    <li>Estuaries and mangroves</li>
+                    <li>Rocky cliffs and beaches</li>
+                    <li>Marina areas</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>📍 Key Adventure Locations with Coordinates</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Activity</th>
+                    <th>Coordinates</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cerro Tetakawi (summit area)</strong></td>
+                    <td>Hiking, photography</td>
+                    <td>27.964° N, –111.040° W</td>
+                </tr>
+                <tr>
+                    <td><strong>Nacapule Canyon Entrance</strong></td>
+                    <td>Hiking, nature</td>
+                    <td>28.014° N, –111.035° W</td>
+                </tr>
+                <tr>
+                    <td><strong>Mirador Scenic Overlook</strong></td>
+                    <td>Photography, viewing Tetakawi</td>
+                    <td>27.952° N, –111.045° W</td>
+                </tr>
+                <tr>
+                    <td><strong>Estero El Soldado (kayak access)</strong></td>
+                    <td>Eco tours, kayaking</td>
+                    <td>~27.966° N, –110.997° W</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🧭 Top Recommended Activities</h3>
+
+        <div class="tip-box">
+            <strong>Must-Do Experiences in San Carlos:</strong>
+            <ul style="padding-left: 2rem; margin-top: 1rem;">
+                <li>Hike <strong>Cerro Tetakawi</strong> for sunrise or sunset views</li>
+                <li>Take a <strong>kayak tour</strong> through Estero El Soldado mangroves</li>
+                <li>Go <strong>snorkeling or diving</strong> in rocky coves and marine reserves</li>
+                <li>Book a <strong>sunset cruise</strong> or private sailing adventure</li>
+                <li>Experience <strong>ATV desert tours</strong> with local guides</li>
+                <li>Visit <strong>Nacapule Canyon</strong>, a unique Sonoran desert oasis</li>
+                <li>Try <strong>sport fishing charters</strong> for yellowtail, dorado, and marlin</li>
+                <li>Take a <strong>wildlife & nature tour</strong> to see dolphins, birds, and sea lions</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready for Adventure?</h2>
+        <p>Start planning your San Carlos adventure today - from water sports to desert exploration!</p>
+        <a href="/en/" class="cta-button">Discover More of San Carlos</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 San Carlos Sonora Tourism Guide. All rights reserved.</p>
+    </footer>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Navbar Script -->
+    <script src="/navbar-scripts.js"></script>
+</body>
+</html>
