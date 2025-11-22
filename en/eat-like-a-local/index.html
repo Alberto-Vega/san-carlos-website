@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat Like a Local in San Carlos Sonora | Best Local Seafood & Mariscos</title>
+    <meta name="description" content="Discover where locals actually eat in San Carlos Sonora - authentic seafood, mariscos, La Manga restaurants, and hidden neighborhood favorites. Real recommendations, no guesswork.">
+    <meta name="keywords" content="eat like a local san carlos sonora, local food san carlos mexico, where locals eat san carlos, best seafood san carlos sonora, la manga san carlos food, mariscos san carlos sonora, doña rosita la manga, local restaurants san carlos">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/eat-like-a-local/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/comer-como-local/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Eat Like a Local in San Carlos Sonora - Authentic Seafood Guide",
+      "description": "Curated local restaurant recommendations in San Carlos Sonora - where locals actually eat for authentic seafood and mariscos",
+      "url": "https://sancarlos-sonora.com/en/eat-like-a-local/"
+    }
+    </script>
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            background: url('../../pristine-beaches.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: #d97706;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        .content-section h4 {
+            font-size: 1.3rem;
+            color: #d97706;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Restaurant Cards */
+        .restaurant-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            border-left: 4px solid #d97706;
+        }
+
+        .restaurant-card h4 {
+            font-size: 1.5rem;
+            color: #d97706;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-meta strong {
+            color: #d97706;
+        }
+
+        .restaurant-card ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .restaurant-card ul li {
+            margin: 0.5rem 0;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #fff7ed;
+            border-left: 4px solid #d97706;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .info-box strong {
+            color: #d97706;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box ul {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
+
+        .info-box ul li {
+            margin: 0.75rem 0;
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .tip-box strong {
+            color: #16a34a;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box ul {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
+
+        .tip-box ul li {
+            margin: 0.75rem 0;
+        }
+
+        /* Route Box */
+        .route-box {
+            background: #eff6ff;
+            border-left: 4px solid #0284c7;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .route-box strong {
+            color: #0284c7;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .route-box ol {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
+
+        .route-box ol li {
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        /* Dishes Grid */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .dish-card {
+            background: #fff7ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #d97706;
+        }
+
+        .dish-card h5 {
+            color: #d97706;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #d97706;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .content-section h2 { font-size: 2rem; }
+            .dishes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Eat Like a Local in San Carlos, Sonora</h1>
+            <p>Authentic Seafood • Local Spots • Hidden Neighborhood Favorites</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <p class="intro-text">
+            Visitors often come to San Carlos for the beaches — but locals know that some of the best experiences happen around the table. If you want to enjoy <strong>real San Carlos flavor</strong>, this guide gives you curated, trustworthy recommendations of where locals actually eat. <strong>No Facebook group searching, no guesswork</strong> — just great food backed by community knowledge.
+        </p>
+
+        <h3>What "Eating Like a Local" Means in San Carlos</h3>
+
+        <div class="info-box">
+            <strong>Coastal Sonoran Seafood Culture:</strong>
+            <ul>
+                <li><strong>Fresh fish and shrimp</strong> from the Sea of Cortez</li>
+                <li><strong>Rustic palapas</strong>, fishing-village restaurants, and family-run kitchens</li>
+                <li><strong>Daily-catch menus</strong> that change depending on what the ocean provides</li>
+                <li><strong>Casual, welcoming environments</strong> with a true community feel</li>
+                <li><strong>No fancy tourist presentation</strong> — just excellent food</li>
+            </ul>
+            <p style="margin-top: 1rem;">If you want "authentic San Carlos," this is it.</p>
+        </div>
+
+        <h2>Best Local Places to Eat in San Carlos</h2>
+
+        <div class="restaurant-card">
+            <h4>1. Restaurante Doña Rosita (La Manga)</h4>
+            <div class="restaurant-meta">
+                <strong>Best for:</strong> True fishermen's-village experience<br>
+                <strong>Vibe:</strong> Rustic, palapa seating, right by the water
+            </div>
+            <p><strong>Why locals love it:</strong> It feels untouched by tourism; everything is based on the daily catch in La Manga, one of the last traditional fishing villages near San Carlos.</p>
+
+            <p style="margin-top: 1rem;"><strong>What to order:</strong></p>
+            <ul>
+                <li>Whole fried fish</li>
+                <li>Garlic shrimp</li>
+                <li>Almeja reina (large clams)</li>
+                <li>Seafood soup (a local favorite)</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><strong>💡 Local tip:</strong> Go early afternoon — dishes often run out based on demand.</p>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>2. Mariscos El Esterito</h4>
+            <div class="restaurant-meta">
+                <strong>Best for:</strong> Simple, fresh seafood near the estuary<br>
+                <strong>Vibe:</strong> Classic marisquería; no-frills, just good food
+            </div>
+
+            <p style="margin-top: 1rem;"><strong>What locals order:</strong></p>
+            <ul>
+                <li>Fish filets</li>
+                <li>Shrimp cocktails</li>
+                <li>Ceviche-style plates</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><strong>Why locals go:</strong> Long-standing reputation and a very traditional local feel.</p>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>3. Mariscos Los Arbolitos (San Carlos Branch)</h4>
+            <div class="restaurant-meta">
+                <strong>Best for:</strong> Local-style seafood with a broader menu<br>
+                <strong>Vibe:</strong> Lively, family-friendly, and Sonoran to the core
+            </div>
+
+            <p style="margin-top: 1rem;"><strong>What to order:</strong></p>
+            <ul>
+                <li>Shrimp and scallop ceviche</li>
+                <li>Grilled fish or zarandeado-style fish</li>
+                <li>Seafood tostadas</li>
+                <li>Octopus dishes and seafood soups</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><strong>Why locals like it:</strong> Although it's part of a Sonoran chain, the San Carlos branch is popular with local families and offers a dependable, authentic seafood experience.</p>
+        </div>
+
+        <h3>Must-Try Local Dishes in San Carlos</h3>
+        <p>These are staples of coastal Sonoran seafood culture — order these if you want the real local experience:</p>
+
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <h5>Pescado Frito</h5>
+                <p>Whole fried fish with lime and salsa.</p>
+            </div>
+
+            <div class="dish-card">
+                <h5>Camarones al Mojo de Ajo</h5>
+                <p>Garlic shrimp served sizzling.</p>
+            </div>
+
+            <div class="dish-card">
+                <h5>Coctel de Camarón</h5>
+                <p>Shrimp cocktail with a spicy tomato sauce.</p>
+            </div>
+
+            <div class="dish-card">
+                <h5>Almeja Reina</h5>
+                <p>Large clams prepared fresh — especially famous in La Manga.</p>
+            </div>
+
+            <div class="dish-card">
+                <h5>Sopa de Mariscos</h5>
+                <p>A hot, flavorful seafood soup often made from the fresh catch.</p>
+            </div>
+        </div>
+
+        <h3>Local Dining Tips (That Visitors Always Appreciate)</h3>
+
+        <div class="tip-box">
+            <strong>🌟 Insider Tips:</strong>
+            <ul>
+                <li><strong>Bring cash</strong> — especially for La Manga and palapa-style restaurants.</li>
+                <li><strong>Ask for the fresh catch:</strong> Say "¿Qué pescado está fresco hoy?"</li>
+                <li><strong>Go early:</strong> Many local spots serve until they run out of food.</li>
+                <li><strong>Expect rustic:</strong> These restaurants are about flavor, not décor.</li>
+                <li><strong>Weekends are busiest:</strong> Plan weekday visits for shorter waits.</li>
+            </ul>
+        </div>
+
+        <h3>Eat-Like-a-Local Route (Recommended Food Crawl)</h3>
+        <p>If you want to taste several authentic places in one day:</p>
+
+        <div class="route-box">
+            <strong>🍽️ One-Day Local Food Experience:</strong>
+            <ol>
+                <li><strong>Midday lunch in La Manga at Doña Rosita</strong> – try clams or fried fish.</li>
+                <li><strong>Stop by El Esterito</strong> – grab a shrimp cocktail or fish filet.</li>
+                <li><strong>Dinner at Mariscos Los Arbolitos</strong> – enjoy a wide menu and ocean breeze.</li>
+            </ol>
+            <p style="margin-top: 1rem;">This route gives you the rustic, the traditional, and the classic Sonoran seafood experience — all in one day.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Eat Like a Local?</h2>
+        <p>Discover the authentic flavors of San Carlos — fresh seafood, family recipes, and local traditions.</p>
+        <a href="/en/" class="cta-button">Explore More of San Carlos</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 San Carlos Sonora Tourism Guide. All rights reserved.</p>
+    </footer>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Navbar Script -->
+    <script src="/navbar-scripts.js"></script>
+</body>
+</html>
