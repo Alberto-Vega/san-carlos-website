@@ -49,11 +49,18 @@
             background: url('../../fine-dining-hero.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 0;
+        }
+
+        /* Fixed parallax only on desktop - iOS Safari doesn't support it well */
+        @media (min-width: 1024px) {
+            .hero {
+                background-attachment: fixed;
+            }
         }
 
         .hero::before {
