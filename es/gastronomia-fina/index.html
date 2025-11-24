@@ -194,6 +194,12 @@
             .restaurant-card-with-image img {
                 max-height: 300px;
             }
+
+            /* Sunset Bar has a wide image - make it taller on mobile for consistency */
+            .restaurant-card-with-image img[src*="sunset-bar"] {
+                min-height: 350px;
+                max-height: 400px;
+            }
         }
 
         /* Tip Box */
