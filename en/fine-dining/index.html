@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine Dining in San Carlos Sonora | Best Restaurants & Upscale Dining</title>
+    <meta name="description" content="Discover the best fine dining restaurants in San Carlos Sonora - from Mediterranean cuisine to sushi, beachfront dining, and international flavors. A foodie's paradise by the sea.">
+    <meta name="keywords" content="fine dining san carlos sonora, best restaurants san carlos mexico, casa manolo restaurant, maguro sushi san carlos, sunset bar grill, soggy peso, mercado san carlos, upscale dining">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="https://sancarlos-sonora.com/en/fine-dining/" />
+    <link rel="alternate" hreflang="es" href="https://sancarlos-sonora.com/es/restaurantes-elegantes/" />
+    <link rel="alternate" hreflang="x-default" href="https://sancarlos-sonora.com/" />
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Fine Dining & Restaurants in San Carlos Sonora",
+      "description": "Guide to upscale restaurants and fine dining experiences in San Carlos Sonora Mexico",
+      "url": "https://sancarlos-sonora.com/en/fine-dining/"
+    }
+    </script>
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            background: url('../../pristine-beaches.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #d97706;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            color: #d97706;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Restaurant Cards */
+        .restaurant-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            border-left: 4px solid #d97706;
+        }
+
+        .restaurant-card-with-image {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 0;
+            border-left: 4px solid #d97706;
+        }
+
+        .restaurant-card-with-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .restaurant-card-content {
+            padding: 2rem;
+        }
+
+        .restaurant-card h4,
+        .restaurant-card-content h4 {
+            font-size: 1.5rem;
+            color: #d97706;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .restaurant-meta strong {
+            color: #d97706;
+        }
+
+        .restaurant-card ul,
+        .restaurant-card-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .restaurant-card ul li,
+        .restaurant-card-content ul li {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 968px) {
+            .restaurant-card-with-image {
+                grid-template-columns: 1fr;
+            }
+
+            .restaurant-card-with-image img {
+                max-height: 300px;
+            }
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .tip-box strong {
+            color: #16a34a;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box ul {
+            margin-top: 1rem;
+            padding-left: 2rem;
+        }
+
+        .tip-box ul li {
+            margin: 0.75rem 0;
+        }
+
+        /* Itinerary Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #d97706;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:hover {
+            background: #fff7ed;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #d97706;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .content-section h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>San Carlos: A Foodie's Paradise by the Sea</h1>
+            <p>Fine Dining • International Flavors • Coastal Elegance</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <p class="intro-text">
+            Nestled along the Sea of Cortez, San Carlos, Sonora, offers more than just stunning coastal views — it's a place where seafood, international flavors, and local tradition meet. Whether you're strolling the marina, lounging on a beach, or exploring the local streets, a culinary adventure awaits.
+        </p>
+
+        <h2>5 Must-Visit Restaurants in San Carlos</h2>
+
+        <div class="restaurant-card-with-image">
+            <img src="../../casa-manolo.jpg" alt="Restaurante Casa Manolo in San Carlos Sonora">
+            <div class="restaurant-card-content">
+                <h4>1. Restaurante Casa Manolo</h4>
+                <div class="restaurant-meta">
+                    <strong>Perfect for:</strong> Romantic dinners, Mediterranean flair, waterfront vibes and beautiful views<br>
+                    <strong>Location:</strong> Marina San Carlos, above Barracuda Bob's, next to the Yacht Club
+                </div>
+
+                <p><strong>Why it stands out:</strong></p>
+                <ul>
+                    <li><strong>Mediterranean/European style</strong> cuisine prepared with local ingredients</li>
+                    <li><strong>Seafood pastas, fine cuts of beef, lamb</strong>, and more</li>
+                    <li><strong>Elegant yet relaxed</strong> setting with marina views</li>
+                    <li><strong>Takeout and reservations</strong> available</li>
+                </ul>
+
+                <div class="tip-box">
+                    <strong>Pro Tips for Visitors:</strong>
+                    <ul>
+                        <li>Get there in time for sunset if possible — the lighting over the marina makes for beautiful ambiance</li>
+                        <li>If you're visiting on a weekend, make sure to have a reservation, especially if you want waterfront seating</li>
+                        <li>Try their seafood pasta or a grilled fish dish — both reflect the best of local and Mediterranean fusion</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>2. Maguro Restaurant & Sushi Bar (Maguro Barra)</h4>
+            <div class="restaurant-meta">
+                <strong>Perfect for:</strong> Sushi lovers, refined fish dishes, dining in the Marina<br>
+                <strong>Location:</strong> Marina San Carlos, at Dock I beside Marvida's
+            </div>
+
+            <p><strong>Why it stands out:</strong></p>
+            <ul>
+                <li><strong>Japanese/Edomae-style</strong> concept with sushi, sashimi, and nigiri</li>
+                <li><strong>Creative seafood dishes</strong> highlighting fresh catches</li>
+                <li><strong>Elegant but casual</strong> ambiance — ideal for a nicer dinner without overly formal flair</li>
+                <li><strong>Hours cater</strong> to both early evening and later diners</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Pro Tips for Visitors:</strong>
+                <ul>
+                    <li>Ask for chef's specials or omakase if offered — these often highlight the best catch of the day</li>
+                    <li>Pair your sushi with a crisp white wine or sake</li>
+                    <li>Take time to stroll around the marina after dinner — the marina lights and boats are part of the charm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>3. Sunset Bar & Grill</h4>
+            <div class="restaurant-meta">
+                <strong>Perfect for:</strong> Beachfront meals, laid-back dinners, watching the sunset<br>
+                <strong>Location:</strong> Algodones Beach, KM 20 — right on the sand
+            </div>
+
+            <p><strong>Why it stands out:</strong></p>
+            <ul>
+                <li><strong>Fresh seafood</strong> with Sonoran flair — grilled catches, burgers, arrachera</li>
+                <li><strong>Right on the beach</strong> with incredible sunset views</li>
+                <li><strong>Music evenings</strong> and entertainment complement the beach setting</li>
+                <li><strong>Creative menu options</strong> alongside traditional favorites</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Pro Tips for Visitors:</strong>
+                <ul>
+                    <li>Aim for dinner time — as the name suggests, sunset views here are magical</li>
+                    <li>Arrive a bit early in peak season to get a good table with beach view</li>
+                    <li>Don't skip appetizers or grilled seafood — they often shine more than the main courses</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>4. Soggy Peso Bar</h4>
+            <div class="restaurant-meta">
+                <strong>Perfect for:</strong> Casual beach eats, margaritas, relaxed hangouts<br>
+                <strong>Location:</strong> New beachfront location beside Playa Blanca condos<br>
+                <strong>Note:</strong> Recently reopened as of March 2025
+            </div>
+
+            <p><strong>Why it stands out:</strong></p>
+            <ul>
+                <li><strong>Retains original relaxed beach bar charm</strong> that locals and visitors love</li>
+                <li><strong>Menu includes:</strong> crab tostadas, ceviche, shrimp quesadilla, whole grilled fish, seafood fettuccine, 10 oz filet mignon</li>
+                <li><strong>Live music</strong> on Friday, Saturday, and Sunday</li>
+                <li><strong>Fun beach-bar games</strong> like ring toss</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Pro Tips for Visitors:</strong>
+                <ul>
+                    <li>Bring a swimsuit — you can eat with your feet in the sand or wade out for a swim</li>
+                    <li>Go mid-afternoon for a relaxed experience before dinner crowds</li>
+                    <li>Be adventurous: try the grilled oysters, clams, or one of their signature margaritas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <h4>5. Mercado San Carlos</h4>
+            <div class="restaurant-meta">
+                <strong>Perfect for:</strong> Sampling local flavors, casual eats, exploring many vendors<br>
+                <strong>Location:</strong> Blvd. Gabriel Estrada Lt1 in San Carlos<br>
+                <strong>Hours:</strong> Open long hours from early morning into late evening
+            </div>
+
+            <p><strong>Why it stands out:</strong></p>
+            <ul>
+                <li><strong>Food-market style</strong> with multiple vendors and stalls</li>
+                <li><strong>Variety of dishes</strong> — roam, choose, and sample different cuisines</li>
+                <li><strong>Vibrant and casual</strong> atmosphere with authentic local feel</li>
+                <li><strong>Flexible timing</strong> — ideal for any meal throughout the day</li>
+            </ul>
+
+            <div class="tip-box">
+                <strong>Pro Tips for Visitors:</strong>
+                <ul>
+                    <li>Come hungry — there's a lot to explore, and you might want to sample from multiple stalls</li>
+                    <li>Ask for local recommendations or what's fresh right now — vendors often know best</li>
+                    <li>It's a great choice for a quick bite or a relaxed evening when you don't feel like formal dining</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Suggested Food Tour Itinerary</h3>
+        <p>Here's a sample way to work these restaurants into a multi-day food tour of San Carlos:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Day 1</strong></td>
+                    <td>Mercado San Carlos (casual, variety)</td>
+                    <td>Casa Manolo (romantic, upscale)</td>
+                </tr>
+                <tr>
+                    <td><strong>Day 2</strong></td>
+                    <td>Sunset Bar & Grill (beach lunch)</td>
+                    <td>Maguro Barra (sushi dinner)</td>
+                </tr>
+                <tr>
+                    <td><strong>Day 3</strong></td>
+                    <td>Soggy Peso Bar (beachside midday)</td>
+                    <td>Revisit favorite or try local taquerias</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Additional Dining Tips</h3>
+
+        <div class="tip-box">
+            <strong>Essential Tips for Your San Carlos Food Tour:</strong>
+            <ul>
+                <li><strong>Pace yourself:</strong> The seafood is rich, and portion sizes can be generous</li>
+                <li><strong>Ask about daily specials or catch-of-the-day:</strong> Some restaurants serve items only when fresh</li>
+                <li><strong>Check hours:</strong> Some venues close earlier or are closed certain weekdays (e.g. Casa Manolo is closed Mondays)</li>
+                <li><strong>Cash & card:</strong> Some smaller stalls or beach bars may prefer cash; carry some pesos</li>
+                <li><strong>Arrive early for sunset views:</strong> The coastal light is part of the experience</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Experience San Carlos Cuisine?</h2>
+        <p>From Mediterranean elegance to beachfront casual dining, San Carlos offers unforgettable culinary experiences.</p>
+        <a href="/en/" class="cta-button">Explore More of San Carlos</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 San Carlos Sonora Tourism Guide. All rights reserved.</p>
+    </footer>
+
+    <!-- Load weather functionality -->
+    <script src="/weather.js"></script>
+
+    <!-- Load navbar HTML -->
+    <script>
+        fetch('/navbar-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                if (typeof initLanguageSwitcher === 'function') {
+                    initLanguageSwitcher();
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Navbar Script -->
+    <script src="/navbar-scripts.js"></script>
+</body>
+</html>
