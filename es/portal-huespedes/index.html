@@ -287,6 +287,17 @@
         // Password - can be changed easily
         const correctPassword = 'SanCarlos2025';
 
+        // Check if user is already authenticated
+        function checkExistingAuth() {
+            const isAuthenticated = sessionStorage.getItem('guestAuthenticated');
+            if (isAuthenticated === 'true') {
+                // User is already logged in, redirect to info page
+                window.location.href = '/es/portal-huespedes/info.html';
+                return true;
+            }
+            return false;
+        }
+
         // Check for password in URL parameter
         function checkURLPassword() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -301,8 +312,10 @@
             }
         }
 
-        // Run URL password check on page load
-        checkURLPassword();
+        // Run checks on page load
+        if (!checkExistingAuth()) {
+            checkURLPassword();
+        }
 
         function openPasswordModal() {
             document.getElementById('passwordModal').classList.add('active');
