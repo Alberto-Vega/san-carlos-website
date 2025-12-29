@@ -284,6 +284,26 @@
     </script>
 
     <script>
+        // Password - can be changed easily
+        const correctPassword = 'SanCarlos2025';
+
+        // Check for password in URL parameter
+        function checkURLPassword() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlPassword = urlParams.get('pass');
+
+            if (urlPassword === correctPassword) {
+                // Store authentication in session
+                sessionStorage.setItem('guestAuthenticated', 'true');
+                sessionStorage.setItem('authTimestamp', Date.now());
+                // Redirect to info page
+                window.location.href = '/es/portal-huespedes/info.html';
+            }
+        }
+
+        // Run URL password check on page load
+        checkURLPassword();
+
         function openPasswordModal() {
             document.getElementById('passwordModal').classList.add('active');
             document.getElementById('password').focus();
@@ -300,9 +320,6 @@
 
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('errorMessage');
-
-            // Password - can be changed easily
-            const correctPassword = 'SanCarlos2025';
 
             if (password === correctPassword) {
                 // Store authentication in session
