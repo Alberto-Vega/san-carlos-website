@@ -16,173 +16,196 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            color: #212121;
             line-height: 1.6;
-            background: #f8f9fa;
-            padding-bottom: 80px; /* Space for bottom nav */
+            background: #fcfcfc;
+            padding-bottom: 70px;
         }
 
         /* Header */
         .portal-header {
-            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            background: #1863DC;
             color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .portal-header h1 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .portal-header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        .property-logo {
+            font-size: 1.5rem;
         }
 
-        /* Tab Content */
-        .tab-content {
-            display: none;
-            padding: 2rem 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            animation: fadeIn 0.3s ease;
+        .property-name {
+            font-size: 1.1rem;
+            font-weight: 400;
         }
 
-        .tab-content.active {
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .header-icons a {
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .header-icons a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main View - Card Grid */
+        .main-view {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .main-view.hidden {
+            display: none;
         }
 
-        /* Home Tab Styles */
-        .welcome-card {
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .info-card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
+            border: 1px solid #ebebeb;
+            border-radius: 8px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        .welcome-card h2 {
-            color: #0ea5e9;
-            font-size: 1.8rem;
+        .info-card:hover {
+            box-shadow: 0 4px 12px rgba(24, 99, 220, 0.15);
+            transform: translateY(-2px);
+            border-color: #1863DC;
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            color: #3B8CCB;
             margin-bottom: 1rem;
-            font-weight: 300;
+            display: block;
         }
 
-        .welcome-card p {
-            color: #666;
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #212121;
+        }
+
+        /* Detail View */
+        .detail-view {
+            display: none;
+            background: white;
+            min-height: calc(100vh - 140px);
+        }
+
+        .detail-view.active {
+            display: block;
+        }
+
+        .detail-header {
+            background: #f4f4f4;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #1863DC;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #212121;
+        }
+
+        .detail-content {
+            padding: 2rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h3 {
+            color: #1863DC;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .detail-section p {
+            color: #212121;
             line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .quick-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .info-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .info-box i {
-            font-size: 2rem;
-            color: #0ea5e9;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .info-box p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .contact-button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.875rem 2rem;
-            background: #0ea5e9;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .contact-button:hover {
-            background: #0284c7;
-            transform: translateY(-2px);
-        }
-
-        /* Info Tab Styles */
-        .info-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-        }
-
-        .info-section h2 {
-            color: #0ea5e9;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-section h3 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .info-section ul {
+        .detail-section ul {
             list-style: none;
             padding: 0;
         }
 
-        .info-section li {
+        .detail-section li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            align-items: baseline;
         }
 
-        .info-section li:last-child {
+        .detail-section li:last-child {
             border-bottom: none;
         }
 
-        .info-section strong {
-            color: #0ea5e9;
-            display: inline-block;
-            min-width: 140px;
+        .detail-section strong {
+            color: #1863DC;
+            min-width: 160px;
+            font-weight: 500;
         }
 
         .note-box {
-            background: #eff6ff;
-            border-left: 4px solid #0ea5e9;
+            background: #e8f2ff;
+            border-left: 4px solid #1863DC;
             padding: 1rem;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             border-radius: 4px;
+        }
+
+        .note-box i {
+            color: #1863DC;
+            margin-right: 0.5rem;
         }
 
         /* Bottom Navigation */
@@ -195,18 +218,19 @@
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-around;
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
             z-index: 100;
+            border-top: 1px solid #ebebeb;
         }
 
         .nav-item {
             flex: 1;
             text-align: center;
             padding: 0.5rem;
-            color: #999;
+            color: #666;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: none;
             background: none;
             font-family: inherit;
@@ -214,26 +238,48 @@
 
         .nav-item i {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0.25rem;
         }
 
         .nav-item span {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-item.active {
-            color: #0ea5e9;
+            color: #1863DC;
         }
 
         @media (max-width: 768px) {
-            .portal-header h1 {
-                font-size: 1.5rem;
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .quick-info {
-                grid-template-columns: 1fr;
+            .info-card {
+                padding: 2rem 1rem;
+            }
+
+            .info-card i {
+                font-size: 2.5rem;
+            }
+
+            .info-card h3 {
+                font-size: 1rem;
+            }
+
+            .header-icons {
+                gap: 0.75rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .property-name {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -241,140 +287,325 @@
 <body>
     <!-- Header -->
     <div class="portal-header">
-        <h1>Tranquil Solimar</h1>
-        <p>Portal de Huéspedes</p>
-    </div>
-
-    <!-- Home Tab -->
-    <div id="homeTab" class="tab-content active">
-        <div class="welcome-card">
-            <h2>Bienvenido a Tranquil Solimar</h2>
-            <p>¡Estamos encantados de tenerte con nosotros! Esta guía contiene todo lo que necesitas para una estadía cómoda y agradable en San Carlos, Sonora.</p>
-            <p>Utiliza la navegación a continuación para acceder a detalles de check-in, información de Wi-Fi, guías de la casa y recomendaciones locales.</p>
+        <div class="header-left">
+            <div class="property-logo">🏠</div>
+            <div class="property-name">Tranquil Solimar</div>
         </div>
-
-        <div class="quick-info">
-            <div class="info-box">
-                <i class="fas fa-clock"></i>
-                <h3>Check-In</h3>
-                <p>3:00 PM</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-sign-out-alt"></i>
-                <h3>Check-Out</h3>
-                <p>11:00 AM</p>
-            </div>
-            <div class="info-box">
-                <i class="fas fa-phone"></i>
-                <h3>Contactar Anfitrión</h3>
-                <p>Disponible 24/7</p>
-            </div>
-        </div>
-
-        <div class="welcome-card" style="margin-top: 2rem; text-align: center;">
-            <h2>¿Necesitas Ayuda?</h2>
-            <p>Si tienes alguna pregunta o necesitas asistencia durante tu estadía, no dudes en contactarnos.</p>
-            <a href="tel:+1234567890" class="contact-button">
-                <i class="fas fa-phone"></i> Contactar Administrador
-            </a>
+        <div class="header-icons">
+            <a onclick="window.print()" title="Imprimir"><i class="fas fa-print"></i></a>
+            <a onclick="shareGuide()" title="Compartir"><i class="fas fa-share-alt"></i></a>
         </div>
     </div>
 
-    <!-- Info Tab -->
-    <div id="infoTab" class="tab-content">
-        <!-- Wi-Fi & Codes -->
-        <div class="info-section">
-            <h2><i class="fas fa-wifi"></i> Wi-Fi y Códigos de Acceso</h2>
+    <!-- Main View - Card Grid -->
+    <div class="main-view" id="mainView">
+        <div class="cards-container">
+            <div class="info-card" onclick="showDetail('welcome')">
+                <i class="far fa-smile"></i>
+                <h3>Bienvenida</h3>
+            </div>
 
-            <h3>Red Wi-Fi</h3>
-            <ul>
-                <li><strong>Nombre de Red:</strong> [Tu Nombre de Wi-Fi]</li>
-                <li><strong>Contraseña:</strong> [Tu Contraseña de Wi-Fi]</li>
-            </ul>
+            <div class="info-card" onclick="showDetail('before-leave')">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Antes de Salir de Casa</h3>
+            </div>
 
-            <h3>Acceso a la Propiedad</h3>
-            <ul>
-                <li><strong>Código de Portón:</strong> [Tu Código de Portón]</li>
-                <li><strong>Código de Puerta:</strong> [Tu Código de Puerta]</li>
-                <li><strong>Código de Alarma:</strong> [Tu Código de Alarma]</li>
-            </ul>
+            <div class="info-card" onclick="showDetail('arrival')">
+                <i class="fas fa-key"></i>
+                <h3>Información de Llegada</h3>
+            </div>
 
-            <div class="note-box">
-                <i class="fas fa-info-circle"></i> <strong>Nota:</strong> Por favor mantén estos códigos confidenciales y no los compartas con otros.
+            <div class="info-card" onclick="showDetail('wifi')">
+                <i class="fas fa-wifi"></i>
+                <h3>Detalles de WiFi / Internet</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('house-info')">
+                <i class="fas fa-home"></i>
+                <h3>Información Clave de la Casa</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('explore')">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Explora el Área</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('safety')">
+                <i class="fas fa-book"></i>
+                <h3>Seguridad y Reglas</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('departure')">
+                <i class="fas fa-suitcase"></i>
+                <h3>Información de Salida</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('contacts')">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Contactos Importantes</h3>
+            </div>
+
+            <div class="info-card" onclick="showDetail('review')">
+                <i class="far fa-star"></i>
+                <h3>Dejar una Reseña</h3>
             </div>
         </div>
+    </div>
 
-        <!-- House Guide -->
-        <div class="info-section">
-            <h2><i class="fas fa-home"></i> Guía de la Casa</h2>
-
-            <h3>Aire Acondicionado</h3>
-            <p>[Instrucciones para usar el sistema de AC]</p>
-
-            <h3>Smart TV</h3>
-            <p>[Instrucciones para usar la TV y servicios de streaming]</p>
-
-            <h3>Electrodomésticos de Cocina</h3>
-            <p>[Instrucciones para cafetera, estufa, horno, etc.]</p>
-
-            <h3>Sistema de Agua</h3>
-            <p>[Información sobre agua, agua potable, calentador de agua]</p>
+    <!-- Detail Views -->
+    <!-- Bienvenida -->
+    <div class="detail-view" id="detail-welcome">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Bienvenida</h2>
         </div>
-
-        <!-- House Rules -->
-        <div class="info-section">
-            <h2><i class="fas fa-clipboard-list"></i> Reglas de la Casa</h2>
-            <ul>
-                <li><strong>Horas de Silencio:</strong> 10:00 PM - 8:00 AM</li>
-                <li><strong>Huéspedes Máximos:</strong> [Número]</li>
-                <li><strong>Fumar:</strong> No permitido dentro</li>
-                <li><strong>Mascotas:</strong> [Tu política de mascotas]</li>
-                <li><strong>Fiestas:</strong> No se permiten fiestas o eventos</li>
-            </ul>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Bienvenido a Tranquil Solimar</h3>
+                <p>¡Estamos encantados de tenerte con nosotros! Esta guía contiene todo lo que necesitas para una estadía cómoda y agradable en San Carlos, Sonora.</p>
+                <p>Utiliza la navegación para acceder a detalles de check-in, información de Wi-Fi, guías de la casa y recomendaciones locales.</p>
+                <p>El horario de check-in es a las 3:00 PM y el check-out es a las 11:00 AM. Si necesitas ayuda durante tu estadía, no dudes en contactarnos.</p>
+            </div>
         </div>
+    </div>
 
-        <!-- Trash & Recycling -->
-        <div class="info-section">
-            <h2><i class="fas fa-trash-alt"></i> Basura y Reciclaje</h2>
-            <p>[Instrucciones para eliminación de basura, días de recolección, ubicación de contenedores]</p>
+    <!-- Antes de Salir de Casa -->
+    <div class="detail-view" id="detail-before-leave">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Antes de Salir de Casa</h2>
         </div>
-
-        <!-- Emergency Contacts -->
-        <div class="info-section">
-            <h2><i class="fas fa-exclamation-triangle"></i> Contactos de Emergencia</h2>
-            <ul>
-                <li><strong>Servicios de Emergencia:</strong> 911</li>
-                <li><strong>Administrador:</strong> [Tu Teléfono]</li>
-                <li><strong>Hospital Local:</strong> [Nombre del Hospital y Teléfono]</li>
-                <li><strong>Policía (No Emergencia):</strong> [Número de Teléfono]</li>
-                <li><strong>Emergencia de Servicios:</strong> [Número de Teléfono]</li>
-            </ul>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Qué Empacar</h3>
+                <ul>
+                    <li><strong>Protector Solar:</strong> Esencial para los días soleados de San Carlos</li>
+                    <li><strong>Toallas de Playa:</strong> Proporcionadas en la propiedad</li>
+                    <li><strong>Zapatos Cómodos:</strong> Para explorar el pueblo</li>
+                    <li><strong>Ropa Ligera:</strong> Clima cálido durante todo el año</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <h3>Documentos de Viaje</h3>
+                <p>Asegúrate de tener tu pasaporte y cualquier documento de viaje requerido para cruzar a México.</p>
+            </div>
         </div>
+    </div>
 
-        <!-- Check-Out -->
-        <div class="info-section">
-            <h2><i class="fas fa-door-open"></i> Procedimientos de Check-Out</h2>
-            <ul>
-                <li>La hora de check-out es a las 11:00 AM</li>
-                <li>Apaga todas las luces y el aire acondicionado</li>
-                <li>Asegúrate de que todas las ventanas y puertas estén cerradas y con seguro</li>
-                <li>Lleva la basura a los contenedores afuera</li>
-                <li>Deja las llaves en el lockbox o según las instrucciones</li>
-                <li>Configura el código de alarma antes de salir</li>
-            </ul>
+    <!-- Información de Llegada -->
+    <div class="detail-view" id="detail-arrival">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Información de Llegada</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Horario de Check-In</h3>
+                <p>El check-in está disponible a partir de las 3:00 PM.</p>
+            </div>
+            <div class="detail-section">
+                <h3>Códigos de Acceso</h3>
+                <ul>
+                    <li><strong>Código de Portón:</strong> [Tu Código de Portón]</li>
+                    <li><strong>Código de Puerta:</strong> [Tu Código de Puerta]</li>
+                    <li><strong>Código de Alarma:</strong> [Tu Código de Alarma]</li>
+                </ul>
+                <div class="note-box">
+                    <i class="fas fa-info-circle"></i> <strong>Nota:</strong> Por favor mantén estos códigos confidenciales y no los compartas con otros.
+                </div>
+            </div>
+            <div class="detail-section">
+                <h3>Estacionamiento</h3>
+                <p>[Información sobre estacionamiento en la propiedad]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detalles de WiFi -->
+    <div class="detail-view" id="detail-wifi">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Detalles de WiFi / Internet</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Red WiFi</h3>
+                <ul>
+                    <li><strong>Nombre de Red:</strong> [Tu Nombre de Wi-Fi]</li>
+                    <li><strong>Contraseña:</strong> [Tu Contraseña de Wi-Fi]</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <h3>Solución de Problemas</h3>
+                <p>Si experimentas problemas de conectividad, intenta reiniciar el router ubicado en [ubicación]. Si los problemas persisten, por favor contáctanos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Información Clave de la Casa -->
+    <div class="detail-view" id="detail-house-info">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Información Clave de la Casa</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Aire Acondicionado</h3>
+                <p>[Instrucciones para usar el sistema de AC]</p>
+            </div>
+            <div class="detail-section">
+                <h3>Smart TV</h3>
+                <p>[Instrucciones para usar la TV y servicios de streaming]</p>
+            </div>
+            <div class="detail-section">
+                <h3>Electrodomésticos de Cocina</h3>
+                <p>[Instrucciones para cafetera, estufa, horno, etc.]</p>
+            </div>
+            <div class="detail-section">
+                <h3>Sistema de Agua</h3>
+                <p>[Información sobre agua, agua potable, calentador de agua]</p>
+            </div>
+            <div class="detail-section">
+                <h3>Basura y Reciclaje</h3>
+                <p>[Instrucciones para eliminación de basura, días de recolección, ubicación de contenedores]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explora el Área -->
+    <div class="detail-view" id="detail-explore">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Explora el Área</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Playas Cercanas</h3>
+                <p>San Carlos ofrece algunas de las playas más hermosas de Sonora. Visita Playa Algodones, Playa San Francisco, o explora las calas apartadas.</p>
+            </div>
+            <div class="detail-section">
+                <h3>Restaurantes</h3>
+                <p>Descubre increíble cocina local y experiencias gastronómicas frente al mar. Consulta nuestro sitio web para recomendaciones detalladas de restaurantes.</p>
+            </div>
+            <div class="detail-section">
+                <h3>Actividades</h3>
+                <p>Desde snorkel y kayak hasta senderismo y observación de aves, hay algo para todos en San Carlos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seguridad y Reglas -->
+    <div class="detail-view" id="detail-safety">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Seguridad y Reglas</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Reglas de la Casa</h3>
+                <ul>
+                    <li><strong>Horas de Silencio:</strong> 10:00 PM - 8:00 AM</li>
+                    <li><strong>Huéspedes Máximos:</strong> [Número]</li>
+                    <li><strong>Fumar:</strong> No permitido dentro</li>
+                    <li><strong>Mascotas:</strong> [Tu política de mascotas]</li>
+                    <li><strong>Fiestas:</strong> No se permiten fiestas o eventos</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <h3>Información de Seguridad</h3>
+                <p>Los detectores de humo y extintores están ubicados en toda la propiedad. En caso de emergencia, marca 911.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Información de Salida -->
+    <div class="detail-view" id="detail-departure">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Información de Salida</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Procedimientos de Check-Out</h3>
+                <ul>
+                    <li>La hora de check-out es a las 11:00 AM</li>
+                    <li>Apaga todas las luces y el aire acondicionado</li>
+                    <li>Asegúrate de que todas las ventanas y puertas estén cerradas y con seguro</li>
+                    <li>Lleva la basura a los contenedores afuera</li>
+                    <li>Deja las llaves en el lockbox o según las instrucciones</li>
+                    <li>Configura el código de alarma antes de salir</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <h3>Check-Out Tardío</h3>
+                <p>Si necesitas un check-out tardío, por favor contáctanos con anticipación. Sujeto a disponibilidad, el check-out tardío puede estar disponible por una tarifa adicional.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contactos Importantes -->
+    <div class="detail-view" id="detail-contacts">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Contactos Importantes</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Contactos de Emergencia</h3>
+                <ul>
+                    <li><strong>Servicios de Emergencia:</strong> 911</li>
+                    <li><strong>Administrador:</strong> [Tu Teléfono]</li>
+                    <li><strong>Hospital Local:</strong> [Nombre del Hospital y Teléfono]</li>
+                    <li><strong>Policía (No Emergencia):</strong> [Número de Teléfono]</li>
+                </ul>
+            </div>
+            <div class="detail-section">
+                <h3>Servicios Locales</h3>
+                <ul>
+                    <li><strong>Servicio de Taxi:</strong> [Número de Teléfono]</li>
+                    <li><strong>Entrega de Alimentos:</strong> [Número de Teléfono]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dejar una Reseña -->
+    <div class="detail-view" id="detail-review">
+        <div class="detail-header">
+            <button class="back-button" onclick="hideDetail()"><i class="fas fa-arrow-left"></i></button>
+            <h2 class="detail-title">Dejar una Reseña</h2>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <h3>Comparte tu Experiencia</h3>
+                <p>¡Esperamos que hayas disfrutado tu estadía en Tranquil Solimar! Tus comentarios nos ayudan a mejorar y ayudan a futuros huéspedes.</p>
+                <p>Por favor considera dejarnos una reseña en tu plataforma de reservas o contáctanos directamente con cualquier comentario.</p>
+            </div>
+            <div class="detail-section">
+                <h3>Contáctanos</h3>
+                <p>Correo: [Tu Correo]<br>Teléfono: [Tu Teléfono]</p>
+            </div>
         </div>
     </div>
 
     <!-- Bottom Navigation -->
     <div class="bottom-nav">
-        <button class="nav-item active" onclick="showTab('home')">
+        <a href="/es/portal-huespedes/" class="nav-item">
             <i class="fas fa-home"></i>
             <span>Inicio</span>
-        </button>
-        <button class="nav-item" onclick="showTab('info')">
+        </a>
+        <button class="nav-item active" onclick="showMainView()">
             <i class="fas fa-info-circle"></i>
-            <span>Información</span>
+            <span>Info</span>
         </button>
+        <a href="/es/" class="nav-item">
+            <i class="fas fa-map"></i>
+            <span>Mapa</span>
+        </a>
+        <a href="/es/" class="nav-item">
+            <i class="fas fa-search"></i>
+            <span>Buscar</span>
+        </a>
     </div>
 
     <script>
@@ -389,29 +620,41 @@
         // Run auth check on load
         checkAuth();
 
-        // Show tab function
-        function showTab(tabName) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
+        // Show detail view
+        function showDetail(section) {
+            document.getElementById('mainView').classList.add('hidden');
+            document.querySelectorAll('.detail-view').forEach(view => {
+                view.classList.remove('active');
             });
-
-            // Remove active class from all nav items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Show selected tab
-            if (tabName === 'home') {
-                document.getElementById('homeTab').classList.add('active');
-                document.querySelector('.nav-item:nth-child(1)').classList.add('active');
-            } else if (tabName === 'info') {
-                document.getElementById('infoTab').classList.add('active');
-                document.querySelector('.nav-item:nth-child(2)').classList.add('active');
-            }
-
-            // Scroll to top
+            document.getElementById('detail-' + section).classList.add('active');
             window.scrollTo(0, 0);
+        }
+
+        // Hide detail view and show main grid
+        function hideDetail() {
+            document.querySelectorAll('.detail-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            document.getElementById('mainView').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Show main view from bottom nav
+        function showMainView() {
+            hideDetail();
+        }
+
+        // Share function
+        function shareGuide() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Guía de Huéspedes Tranquil Solimar',
+                    text: 'Información para huéspedes de Tranquil Solimar',
+                    url: window.location.href
+                });
+            } else {
+                alert('Comparte este enlace: ' + window.location.href);
+            }
         }
     </script>
 </body>
