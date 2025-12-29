@@ -254,6 +254,74 @@
             color: #1863DC;
         }
 
+        /* Explore Area Recommendation Cards */
+        .recommendation-card {
+            background: #f8f9fa;
+            border-left: 4px solid #1863DC;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .recommendation-card h4 {
+            color: #1863DC;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .recommendation-card p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-list li {
+            padding: 0.5rem 0;
+            border-bottom: none;
+            color: #212121;
+            display: flex;
+            align-items: center;
+        }
+
+        .recommendation-list li:before {
+            content: "✓";
+            color: #3B8CCB;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .full-guide-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: #1863DC;
+            border: 2px solid #1863DC;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .full-guide-button:hover {
+            background: #1863DC;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(24, 99, 220, 0.3);
+        }
+
+        .full-guide-button i {
+            margin-left: 0.5rem;
+        }
+
         @media (max-width: 768px) {
             .cards-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -480,16 +548,73 @@
         </div>
         <div class="detail-content">
             <div class="detail-section">
-                <h3>Nearby Beaches</h3>
-                <p>San Carlos offers some of the most beautiful beaches in Sonora. Visit Playa Algodones, San Francisco Beach, or explore the secluded coves.</p>
+                <h3><i class="fas fa-umbrella-beach"></i> Must-Visit Beaches</h3>
+                <div class="recommendation-card">
+                    <h4>Top Beach Picks</h4>
+                    <ul class="recommendation-list">
+                        <li>Playa Algodones - Perfect for swimming and water sports</li>
+                        <li>San Francisco Beach - Family-friendly with calm waters</li>
+                        <li>Piedras Pintas - Stunning rock formations and snorkeling</li>
+                        <li>Catch 22 Beach - Secluded paradise for relaxation</li>
+                    </ul>
+                    <a href="/en/beaches/" target="_blank" class="full-guide-button">
+                        View Complete Beach Guide <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
             </div>
+
             <div class="detail-section">
-                <h3>Restaurants</h3>
-                <p>Discover amazing local cuisine and beachfront dining experiences. Check out our website for detailed restaurant recommendations.</p>
+                <h3><i class="fas fa-utensils"></i> Dining Recommendations</h3>
+                <div class="recommendation-card">
+                    <h4>Local Favorites</h4>
+                    <p>Experience authentic Sonoran cuisine and fresh seafood at these beloved spots:</p>
+                    <ul class="recommendation-list">
+                        <li>Tequila's Restaurant - Traditional Mexican favorites</li>
+                        <li>Jax Snacks - Best fish tacos in town</li>
+                        <li>Rosa's Cantina - Waterfront dining with sunset views</li>
+                    </ul>
+                    <a href="/en/eat-like-a-local/" target="_blank" class="full-guide-button">
+                        Explore All Restaurants <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="recommendation-card">
+                    <h4>Beachfront Experiences</h4>
+                    <p>Enjoy dining with your toes in the sand:</p>
+                    <ul class="recommendation-list">
+                        <li>Sunset Bar & Grill - Watch dolphins while you dine</li>
+                        <li>Soggy Peso - Live music and beach vibes</li>
+                        <li>JJ's Cantina - Local hangout with great atmosphere</li>
+                    </ul>
+                    <a href="/en/beachfront-experiences/" target="_blank" class="full-guide-button">
+                        See Beach Clubs & Dining <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
             </div>
+
             <div class="detail-section">
-                <h3>Activities</h3>
-                <p>From snorkeling and kayaking to hiking and bird watching, there's something for everyone in San Carlos.</p>
+                <h3><i class="fas fa-hiking"></i> Activities & Adventures</h3>
+                <div class="recommendation-card">
+                    <h4>Popular Activities</h4>
+                    <ul class="recommendation-list">
+                        <li>Snorkeling & Scuba Diving - Crystal clear waters</li>
+                        <li>Sport Fishing - World-class catches year-round</li>
+                        <li>Kayaking & Paddleboarding - Explore hidden coves</li>
+                        <li>Hiking Trails - Desert and coastal landscapes</li>
+                        <li>Dolphin & Whale Watching - Seasonal tours available</li>
+                    </ul>
+                    <a href="/en/activities/" target="_blank" class="full-guide-button">
+                        Discover All Activities <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3><i class="fas fa-info-circle"></i> Need More Information?</h3>
+                <p>Visit our complete San Carlos travel guide for detailed information on attractions, events, transportation, and insider tips to make the most of your stay.</p>
+                <a href="/en/" target="_blank" class="full-guide-button">
+                    Explore Full Travel Guide <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </div>
     </div>
