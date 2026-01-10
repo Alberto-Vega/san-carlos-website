@@ -7,6 +7,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>
         * {
@@ -575,10 +576,25 @@
             <div class="detail-section">
                 <h3>Red WiFi</h3>
                 <ul>
-                    <li><strong>Nombre de Red:</strong> [Tu Nombre de Wi-Fi]</li>
-                    <li><strong>Contraseña:</strong> [Tu Contraseña de Wi-Fi]</li>
+                    <li><strong>Nombre de Red:</strong> TP-Link_6C61_5G</li>
+                    <li><strong>Contraseña:</strong> 09092259
+                        <button onclick="copyPassword()" style="margin-left: 0.5rem; padding: 0.25rem 0.75rem; background: #3B8CCB; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+                            <i class="fas fa-copy"></i> Copiar
+                        </button>
+                    </li>
                 </ul>
+                <button onclick="shareWiFi()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: #1863DC; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; width: 100%;">
+                    <i class="fas fa-wifi"></i> Compartir Credenciales WiFi
+                </button>
             </div>
+
+            <div class="detail-section" style="text-align: center;">
+                <h3>Conexión Rápida con Código QR</h3>
+                <p>Escanea este código QR para conectarte automáticamente:</p>
+                <div id="wifiQRCode" style="display: inline-block; padding: 1rem; background: white; border-radius: 8px; margin: 1rem 0;"></div>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;"><em>¡Apunta la cámara de tu teléfono al código QR y automáticamente te pedirá unirte a la red!</em></p>
+            </div>
+
             <div class="detail-section">
                 <h3>Solución de Problemas</h3>
                 <p>Si experimentas problemas de conectividad, intenta reiniciar el router ubicado en [ubicación]. Si los problemas persisten, por favor contáctanos.</p>
@@ -857,6 +873,71 @@
                 alert('Comparte este enlace: ' + window.location.href);
             }
         }
+
+        // Copy WiFi password
+        function copyPassword() {
+            const password = '09092259';
+            navigator.clipboard.writeText(password).then(() => {
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> ¡Copiado!';
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 2000);
+            }).catch(() => {
+                alert('Contraseña: ' + password);
+            });
+        }
+
+        // Share WiFi credentials
+        function shareWiFi() {
+            const wifiText = `Red WiFi: TP-Link_6C61_5G\nContraseña: 09092259\n\nPara conectarte:\n1. Abre la configuración de WiFi en tu dispositivo\n2. Selecciona "TP-Link_6C61_5G"\n3. Ingresa la contraseña: 09092259\n\n¡O escanea el código QR de arriba para conexión instantánea!`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'WiFi Tranquil Solimar',
+                    text: wifiText
+                }).catch(() => {
+                    // If share fails, copy to clipboard
+                    navigator.clipboard.writeText(wifiText).then(() => {
+                        alert('¡Credenciales WiFi copiadas al portapapeles!');
+                    });
+                });
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(wifiText).then(() => {
+                    alert('¡Credenciales WiFi copiadas al portapapeles!\n\n' + wifiText);
+                }).catch(() => {
+                    alert(wifiText);
+                });
+            }
+        }
+
+        // Generate WiFi QR Code
+        function generateWiFiQR() {
+            const qrContainer = document.getElementById('wifiQRCode');
+            if (qrContainer && qrContainer.innerHTML === '') {
+                // WiFi QR code format: WIFI:T:WPA;S:SSID;P:password;;
+                const wifiString = 'WIFI:T:WPA;S:TP-Link_6C61_5G;P:09092259;;';
+                new QRCode(qrContainer, {
+                    text: wifiString,
+                    width: 200,
+                    height: 200,
+                    colorDark: '#1863DC',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+        }
+
+        // Generate QR code when WiFi detail is shown
+        const originalShowDetail = showDetail;
+        showDetail = function(section) {
+            originalShowDetail(section);
+            if (section === 'wifi') {
+                setTimeout(generateWiFiQR, 100);
+            }
+        };
     </script>
 </body>
 </html>
