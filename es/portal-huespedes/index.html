@@ -8,6 +8,7 @@
 
     <!-- Navbar CSS -->
     <link rel="stylesheet" href="/navbar-styles.css">
+    <link rel="stylesheet" href="/portal-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -87,6 +88,14 @@
             background: #0284c7;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6);
+        }
+
+        /* Language switcher for hero page */
+        .hero-language-switcher {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1001;
         }
 
         /* Password Modal */
@@ -227,6 +236,14 @@
     <!-- Navbar placeholder -->
     <div id="navbar-placeholder"></div>
 
+    <!-- Language Switcher -->
+    <div class="hero-language-switcher">
+        <a href="/en/guest-portal/" class="language-switcher" title="Switch to English" onclick="saveLanguagePreference('en')">
+            <span class="flag">🇺🇸</span>
+            <span>EN</span>
+        </a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-portal">
         <div class="hero-content">
@@ -266,6 +283,17 @@
 
     <!-- Load navbar functionality -->
     <script src="/navbar-scripts.js"></script>
+
+    <!-- Language preference function -->
+    <script>
+        function saveLanguagePreference(lang) {
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {
+                console.warn('Could not save language preference:', e);
+            }
+        }
+    </script>
 
     <!-- Load weather functionality -->
     <script src="/weather.js"></script>
