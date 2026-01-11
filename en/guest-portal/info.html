@@ -209,6 +209,50 @@
             margin-right: 0.5rem;
         }
 
+        /* Collapsible sections */
+        details.collapsible-section {
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        details.collapsible-section summary {
+            background: #f9fafb;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1863DC;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+
+        details.collapsible-section summary:hover {
+            background: #f3f4f6;
+        }
+
+        details.collapsible-section summary::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible-section[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible-section .collapsible-content {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        details.collapsible-section summary::-webkit-details-marker {
+            display: none;
+        }
+
         /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
@@ -445,95 +489,98 @@
             <h2 class="detail-title">Before You Leave Home</h2>
         </div>
         <div class="detail-content">
-            <div class="detail-section">
-                <h3>What to Pack</h3>
-                <ul>
-                    <li><strong>Sunscreen:</strong> Essential for sunny San Carlos days</li>
-                    <li><strong>Beach Towels:</strong> Provided at the property</li>
-                    <li><strong>Comfortable Shoes:</strong> For exploring the town</li>
-                    <li><strong>Light Clothing:</strong> Warm weather year-round</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h3>Travel Documents</h3>
-                <p>Ensure you have your passport and any required travel documents for crossing into Mexico.</p>
-            </div>
-            <div class="detail-section">
-                <h3>How to Get Here</h3>
-                <p><strong>From Arizona (via Nogales):</strong></p>
-                <ol>
-                    <li>Cross the border at Nogales, Arizona → Nogales, Sonora</li>
-                    <li>Follow Mexico Highway 15 South towards Guaymas/San Carlos (approximately 4 hours from the border)</li>
-                </ol>
-
-                <p style="margin-top: 1.5rem;"><strong>Detailed Directions from Highway 15:</strong></p>
-                <ol>
-                    <li><strong>Continue onto Guaymas - Hermosillo / México 15 N</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 5.5 km</span></li>
-
-                    <li><strong>Use the right lane to take the ramp to San Carlos / México 15</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 500 m</span></li>
-
-                    <li><strong>Continue onto SON 124</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 10.4 km</span></li>
-
-                    <li><strong>Turn right onto Cam. de los Yaquis</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 140 m</span></li>
-
-                    <li><strong>At the roundabout, take the 2nd exit and stay on Cam. de los Yaquis</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 750 m</span></li>
-
-                    <li><strong>Turn right</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Destination will be on the right</span></li>
-                </ol>
-
-                <p style="margin-top: 1.5rem;"><strong>Navigation:</strong> Tap the button below to open turn-by-turn directions directly in your phone's maps app:</p>
-                <a href="https://maps.google.com/maps?q=Condominios+Solimar,+San+Carlos,+Sonora,+Mexico" target="_blank" class="full-guide-button" style="margin-top: 1rem;">
-                    <i class="fas fa-map-marked-alt"></i> Open Navigation to Condominios Solimar
-                </a>
-
-                <div class="note-box" style="margin-top: 1.5rem;">
-                    <i class="fas fa-info-circle"></i> <strong>Border Crossing Tip:</strong> Have your passport ready and consider crossing early in the day to avoid long wait times. Mexican car insurance is required and can be purchased online before your trip.
+            <details class="collapsible-section">
+                <summary>What to Pack</summary>
+                <div class="collapsible-content">
+                    <ul>
+                        <li><strong>Sunscreen:</strong> Essential for sunny San Carlos days</li>
+                        <li><strong>Beach Towels:</strong> Provided at the property</li>
+                        <li><strong>Comfortable Shoes:</strong> For exploring the town</li>
+                        <li><strong>Light Clothing:</strong> Warm weather year-round</li>
+                        <li><strong>Travel Documents:</strong> Ensure you have your passport and any required travel documents for crossing into Mexico</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="detail-section">
-                <h3>What's Provided at the Property</h3>
-                <p>These essentials are already stocked for your convenience:</p>
+            </details>
+            <details class="collapsible-section">
+                <summary>How to Get Here</summary>
+                <div class="collapsible-content">
+                    <p><strong>From Arizona (via Nogales):</strong></p>
+                    <ol>
+                        <li>Cross the border at Nogales, Arizona → Nogales, Sonora</li>
+                        <li>Follow Mexico Highway 15 South towards Guaymas/San Carlos (approximately 4 hours from the border)</li>
+                    </ol>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Linens & Bedding</h4>
-                <ul class="recommendation-list">
-                    <li>Bed linen & bedspreads</li>
-                    <li>Bath towels, hand towels, flannels</li>
-                </ul>
-                <p style="color: #666; font-size: 0.9rem; margin-left: 1.5rem;"><em>Note: Beach towels are not provided</em></p>
+                    <p style="margin-top: 1.5rem;"><strong>Detailed Directions from Highway 15:</strong></p>
+                    <ol>
+                        <li><strong>Continue onto Guaymas - Hermosillo / México 15 N</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 5.5 km</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Bathroom Essentials</h4>
-                <ul class="recommendation-list">
-                    <li>Hand soap</li>
-                    <li>Shampoo & shower gel</li>
-                    <li>Toilet paper</li>
-                    <li>Hair dryer</li>
-                </ul>
+                        <li><strong>Use the right lane to take the ramp to San Carlos / México 15</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 500 m</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Kitchen & Utility</h4>
-                <ul class="recommendation-list">
-                    <li>Cooking oil</li>
-                    <li>Salt & pepper</li>
-                    <li>Assorted herbs & spices</li>
-                    <li>Washing up liquid & sponge</li>
-                </ul>
+                        <li><strong>Continue onto SON 124</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 10.4 km</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Store Cupboard</h4>
-                <ul class="recommendation-list">
-                    <li>Selection of teabags</li>
-                    <li>Coffee beans & ground coffee for cafetiere</li>
-                    <li>Sugar & sweetener</li>
-                </ul>
+                        <li><strong>Turn right onto Cam. de los Yaquis</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 140 m</span></li>
 
-                <div class="note-box">
-                    <i class="fas fa-info-circle"></i> <strong>Please Note:</strong> These items are provided for your use during your stay. Please help us maintain our stock for future guests by not removing items or taking extras from storage. Thank you for your understanding!
+                        <li><strong>At the roundabout, take the 2nd exit and stay on Cam. de los Yaquis</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distance: 750 m</span></li>
+
+                        <li><strong>Turn right</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Destination will be on the right</span></li>
+                    </ol>
+
+                    <p style="margin-top: 1.5rem;"><strong>Navigation:</strong> Tap the button below to open turn-by-turn directions directly in your phone's maps app:</p>
+                    <a href="https://maps.google.com/maps?q=Condominios+Solimar,+San+Carlos,+Sonora,+Mexico" target="_blank" class="full-guide-button" style="margin-top: 1rem;">
+                        <i class="fas fa-map-marked-alt"></i> Open Navigation to Condominios Solimar
+                    </a>
+
+                    <div class="note-box" style="margin-top: 1.5rem;">
+                        <i class="fas fa-info-circle"></i> <strong>Border Crossing Tip:</strong> Have your passport ready and consider crossing early in the day to avoid long wait times. Mexican car insurance is required and can be purchased online before your trip.
+                    </div>
                 </div>
-            </div>
+            </details>
+            <details class="collapsible-section">
+                <summary>What's Provided at the Property</summary>
+                <div class="collapsible-content">
+                    <p>These essentials are already stocked for your convenience:</p>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Linens & Bedding</h4>
+                    <ul class="recommendation-list">
+                        <li>Bed linen & bedspreads</li>
+                        <li>Bath towels, hand towels, flannels</li>
+                    </ul>
+                    <p style="color: #666; font-size: 0.9rem; margin-left: 1.5rem;"><em>Note: Beach towels are not provided</em></p>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Bathroom Essentials</h4>
+                    <ul class="recommendation-list">
+                        <li>Hand soap</li>
+                        <li>Shampoo & shower gel</li>
+                        <li>Toilet paper</li>
+                        <li>Hair dryer</li>
+                    </ul>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Kitchen & Utility</h4>
+                    <ul class="recommendation-list">
+                        <li>Cooking oil</li>
+                        <li>Salt & pepper</li>
+                        <li>Assorted herbs & spices</li>
+                        <li>Washing up liquid & sponge</li>
+                    </ul>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Store Cupboard</h4>
+                    <ul class="recommendation-list">
+                        <li>Selection of teabags</li>
+                        <li>Coffee beans & ground coffee for cafetiere</li>
+                        <li>Sugar & sweetener</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <i class="fas fa-info-circle"></i> <strong>Please Note:</strong> These items are provided for your use during your stay. Please help us maintain our stock for future guests by not removing items or taking extras from storage. Thank you for your understanding!
+                    </div>
+                </div>
+            </details>
         </div>
     </div>
 

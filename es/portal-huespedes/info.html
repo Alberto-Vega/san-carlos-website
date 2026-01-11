@@ -209,6 +209,50 @@
             margin-right: 0.5rem;
         }
 
+        /* Collapsible sections */
+        details.collapsible-section {
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        details.collapsible-section summary {
+            background: #f9fafb;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1863DC;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+
+        details.collapsible-section summary:hover {
+            background: #f3f4f6;
+        }
+
+        details.collapsible-section summary::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible-section[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible-section .collapsible-content {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        details.collapsible-section summary::-webkit-details-marker {
+            display: none;
+        }
+
         /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
@@ -445,95 +489,98 @@
             <h2 class="detail-title">Antes de Salir de Casa</h2>
         </div>
         <div class="detail-content">
-            <div class="detail-section">
-                <h3>Qué Empacar</h3>
-                <ul>
-                    <li><strong>Protector Solar:</strong> Esencial para los días soleados de San Carlos</li>
-                    <li><strong>Toallas de Playa:</strong> Proporcionadas en la propiedad</li>
-                    <li><strong>Zapatos Cómodos:</strong> Para explorar el pueblo</li>
-                    <li><strong>Ropa Ligera:</strong> Clima cálido durante todo el año</li>
-                </ul>
-            </div>
-            <div class="detail-section">
-                <h3>Documentos de Viaje</h3>
-                <p>Asegúrate de tener tu pasaporte y cualquier documento de viaje requerido para cruzar a México.</p>
-            </div>
-            <div class="detail-section">
-                <h3>Cómo Llegar Aquí</h3>
-                <p><strong>Desde Arizona (vía Nogales):</strong></p>
-                <ol>
-                    <li>Cruza la frontera en Nogales, Arizona → Nogales, Sonora</li>
-                    <li>Sigue la Carretera México 15 Sur hacia Guaymas/San Carlos (aproximadamente 4 horas desde la frontera)</li>
-                </ol>
-
-                <p style="margin-top: 1.5rem;"><strong>Direcciones Detalladas desde la Carretera 15:</strong></p>
-                <ol>
-                    <li><strong>Continúa por Guaymas - Hermosillo / México 15 N</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 5.5 km</span></li>
-
-                    <li><strong>Usa el carril derecho para tomar la rampa a San Carlos / México 15</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 500 m</span></li>
-
-                    <li><strong>Continúa por SON 124</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 10.4 km</span></li>
-
-                    <li><strong>Gira a la derecha en Cam. de los Yaquis</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 140 m</span></li>
-
-                    <li><strong>En la rotonda, toma la 2ª salida y permanece en Cam. de los Yaquis</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 750 m</span></li>
-
-                    <li><strong>Gira a la derecha</strong>
-                    <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">El destino estará a la derecha</span></li>
-                </ol>
-
-                <p style="margin-top: 1.5rem;"><strong>Navegación:</strong> Toca el botón a continuación para abrir direcciones paso a paso directamente en la aplicación de mapas de tu teléfono:</p>
-                <a href="https://maps.google.com/maps?q=Condominios+Solimar,+San+Carlos,+Sonora,+Mexico" target="_blank" class="full-guide-button" style="margin-top: 1rem;">
-                    <i class="fas fa-map-marked-alt"></i> Abrir Navegación a Condominios Solimar
-                </a>
-
-                <div class="note-box" style="margin-top: 1.5rem;">
-                    <i class="fas fa-info-circle"></i> <strong>Consejo para Cruzar la Frontera:</strong> Ten tu pasaporte listo y considera cruzar temprano en el día para evitar largas esperas. Se requiere seguro de auto mexicano y puede comprarse en línea antes de tu viaje.
+            <details class="collapsible-section">
+                <summary>Qué Empacar</summary>
+                <div class="collapsible-content">
+                    <ul>
+                        <li><strong>Protector Solar:</strong> Esencial para los días soleados de San Carlos</li>
+                        <li><strong>Toallas de Playa:</strong> Proporcionadas en la propiedad</li>
+                        <li><strong>Zapatos Cómodos:</strong> Para explorar el pueblo</li>
+                        <li><strong>Ropa Ligera:</strong> Clima cálido durante todo el año</li>
+                        <li><strong>Documentos de Viaje:</strong> Asegúrate de tener tu pasaporte y cualquier documento de viaje requerido para cruzar a México</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="detail-section">
-                <h3>Lo Que Está Provisto en la Propiedad</h3>
-                <p>Estos artículos esenciales ya están disponibles para tu conveniencia:</p>
+            </details>
+            <details class="collapsible-section">
+                <summary>Cómo Llegar Aquí</summary>
+                <div class="collapsible-content">
+                    <p><strong>Desde Arizona (vía Nogales):</strong></p>
+                    <ol>
+                        <li>Cruza la frontera en Nogales, Arizona → Nogales, Sonora</li>
+                        <li>Sigue la Carretera México 15 Sur hacia Guaymas/San Carlos (aproximadamente 4 horas desde la frontera)</li>
+                    </ol>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Ropa de Cama y Baño</h4>
-                <ul class="recommendation-list">
-                    <li>Ropa de cama y colchas</li>
-                    <li>Toallas de baño, toallas de mano, toallitas</li>
-                </ul>
-                <p style="color: #666; font-size: 0.9rem; margin-left: 1.5rem;"><em>Nota: No se proporcionan toallas de playa</em></p>
+                    <p style="margin-top: 1.5rem;"><strong>Direcciones Detalladas desde la Carretera 15:</strong></p>
+                    <ol>
+                        <li><strong>Continúa por Guaymas - Hermosillo / México 15 N</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 5.5 km</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Esenciales de Baño</h4>
-                <ul class="recommendation-list">
-                    <li>Jabón de manos</li>
-                    <li>Champú y gel de ducha</li>
-                    <li>Papel higiénico</li>
-                    <li>Secador de pelo</li>
-                </ul>
+                        <li><strong>Usa el carril derecho para tomar la rampa a San Carlos / México 15</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 500 m</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Cocina y Utilidades</h4>
-                <ul class="recommendation-list">
-                    <li>Aceite de cocina</li>
-                    <li>Sal y pimienta</li>
-                    <li>Hierbas y especias surtidas</li>
-                    <li>Líquido lavaplatos y esponja</li>
-                </ul>
+                        <li><strong>Continúa por SON 124</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 10.4 km</span></li>
 
-                <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Despensa</h4>
-                <ul class="recommendation-list">
-                    <li>Selección de bolsitas de té</li>
-                    <li>Granos de café y café molido para cafetera</li>
-                    <li>Azúcar y edulcorante</li>
-                </ul>
+                        <li><strong>Gira a la derecha en Cam. de los Yaquis</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 140 m</span></li>
 
-                <div class="note-box">
-                    <i class="fas fa-info-circle"></i> <strong>Nota Importante:</strong> Estos artículos están provistos para tu uso durante tu estadía. Por favor ayúdanos a mantener nuestro inventario para futuros huéspedes no removiendo artículos ni tomando extras del almacenamiento. ¡Gracias por tu comprensión!
+                        <li><strong>En la rotonda, toma la 2ª salida y permanece en Cam. de los Yaquis</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">Distancia: 750 m</span></li>
+
+                        <li><strong>Gira a la derecha</strong>
+                        <br><span style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">El destino estará a la derecha</span></li>
+                    </ol>
+
+                    <p style="margin-top: 1.5rem;"><strong>Navegación:</strong> Toca el botón a continuación para abrir direcciones paso a paso directamente en la aplicación de mapas de tu teléfono:</p>
+                    <a href="https://maps.google.com/maps?q=Condominios+Solimar,+San+Carlos,+Sonora,+Mexico" target="_blank" class="full-guide-button" style="margin-top: 1rem;">
+                        <i class="fas fa-map-marked-alt"></i> Abrir Navegación a Condominios Solimar
+                    </a>
+
+                    <div class="note-box" style="margin-top: 1.5rem;">
+                        <i class="fas fa-info-circle"></i> <strong>Consejo para Cruzar la Frontera:</strong> Ten tu pasaporte listo y considera cruzar temprano en el día para evitar largas esperas. Se requiere seguro de auto mexicano y puede comprarse en línea antes de tu viaje.
+                    </div>
                 </div>
-            </div>
+            </details>
+            <details class="collapsible-section">
+                <summary>Lo Que Está Provisto en la Propiedad</summary>
+                <div class="collapsible-content">
+                    <p>Estos artículos esenciales ya están disponibles para tu conveniencia:</p>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Ropa de Cama y Baño</h4>
+                    <ul class="recommendation-list">
+                        <li>Ropa de cama y colchas</li>
+                        <li>Toallas de baño, toallas de mano, toallitas</li>
+                    </ul>
+                    <p style="color: #666; font-size: 0.9rem; margin-left: 1.5rem;"><em>Nota: No se proporcionan toallas de playa</em></p>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Esenciales de Baño</h4>
+                    <ul class="recommendation-list">
+                        <li>Jabón de manos</li>
+                        <li>Champú y gel de ducha</li>
+                        <li>Papel higiénico</li>
+                        <li>Secador de pelo</li>
+                    </ul>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Cocina y Utilidades</h4>
+                    <ul class="recommendation-list">
+                        <li>Aceite de cocina</li>
+                        <li>Sal y pimienta</li>
+                        <li>Hierbas y especias surtidas</li>
+                        <li>Líquido lavaplatos y esponja</li>
+                    </ul>
+
+                    <h4 style="color: #1863DC; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Despensa</h4>
+                    <ul class="recommendation-list">
+                        <li>Selección de bolsitas de té</li>
+                        <li>Granos de café y café molido para cafetera</li>
+                        <li>Azúcar y edulcorante</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <i class="fas fa-info-circle"></i> <strong>Nota Importante:</strong> Estos artículos están provistos para tu uso durante tu estadía. Por favor ayúdanos a mantener nuestro inventario para futuros huéspedes no removiendo artículos ni tomando extras del almacenamiento. ¡Gracias por tu comprensión!
+                    </div>
+                </div>
+            </details>
         </div>
     </div>
 
